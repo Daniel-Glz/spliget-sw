@@ -15,7 +15,10 @@ const Nav = ({posts}) => {
 
     return (
         <ul className="mainmenu">
-            <li className="menu-item-has-children"><a href="/" aria-label='Ir a pagina de inicio'>Inicio</a>
+            <li className="menu-item-has-children">
+                <Link legacyBehavior href="/">
+                    <a aria-label='Ir a pagina de inicio'>Inicio</a>
+                </Link>
             </li>
             <li className="menu-item-has-children">
                 <Link href="/">

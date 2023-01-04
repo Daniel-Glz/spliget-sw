@@ -149,9 +149,8 @@ const PostSectionFive = ({ postData }) => {
                               <ul className="social-share-transparent justify-content-end">
                                 {firstPost.author_social.map((data) => (
                                   <li key={data.url}>
-                                    <a href={data.url}>
-                                      
-                                    </a>
+                                    <Link href={data.url}>
+                                    </Link>
                                   </li>
                                 ))}
                               </ul>

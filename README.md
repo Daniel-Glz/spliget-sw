@@ -11,4 +11,4 @@ El blog está creado con Next.js y WordPress. La idea es que el blog sea un siti
 - `npm run dev` - Inicia el servidor de desarrollo
 - `npm run build` - Crea la versión de producción del sitio estático
 - `npm run start` - Inicia el servidor de producción
-= `npm run lint` - Ejecuta el linter de código
+- `npm run lint` - Ejecuta el linter de código

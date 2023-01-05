@@ -15,7 +15,7 @@ const ContactUs = ({ allPosts }) => {
     return (
         <>
             <HeadTitle pageTitle="Contact Us" />
-            <Header postData={allPosts} pClass="header-light header-sticky header-with-shadow" />
+            <Header pClass="header-light header-sticky header-with-shadow" />
             <BreadcrumbTwo
                 title="Contact Us"
                 paragraph="Wherever &amp; whenever you need us. We are here for you – contact us for all your support needs.<br /> be it technical, general queries or information support."

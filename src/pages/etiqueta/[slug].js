@@ -9,7 +9,7 @@ import { gql } from '@apollo/client';
 import client from '../../../lib/apollo-client';
 
 
-const TagsArchive = ({ tagPosts, allPosts }) => {
+const TagsArchive = ({ tagPosts }) => {
 
     const router = useRouter()
 
@@ -17,7 +17,7 @@ const TagsArchive = ({ tagPosts, allPosts }) => {
 
     return (
         <>
-            <Header postData={allPosts} />
+            <Header />
             <BreadcrumbOne title={BreadCrumbTitle.replace('-', ' ')} />
             <div className="axil-post-list-area axil-section-gap bg-color-white">
                 <div className="container">
@@ -26,7 +26,7 @@ const TagsArchive = ({ tagPosts, allPosts }) => {
                             <PostLayoutTwo dataPost={tagPosts} show="5" />
                         </div>
                         <div className="col-lg-4 col-xl-4 mt_md--40 mt_sm--40">
-                            <SidebarOne dataPost={allPosts} />
+                            <SidebarOne />
                         </div>
                     </div>
                 </div>

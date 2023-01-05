@@ -13,7 +13,7 @@ const PostSectionFour = ({postData, adBanner}) => {
             <PostLayoutTwo dataPost={postData} show="5"/>
           </div>
           <div className="col-lg-4 col-xl-4 mt_md--40 mt_sm--40">
-            <SidebarOne dataPost={postData}/>
+            <SidebarOne/>
           </div>
         </div>
       </div>

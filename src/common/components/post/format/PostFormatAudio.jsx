@@ -31,8 +31,6 @@ const PostFormatAudio = ({ postData, allData }) => {
                   className="post-details-content"
                   dangerouslySetInnerHTML={{ __html: postContent }}
                 ></div>
-                <PostAuthor dataAuthor={postData} />
-                <PostComment />
               </div>
             </div>
             <div className="col-lg-4">

@@ -64,7 +64,7 @@ textarea {
     border-radius: var(--radius);
     /* -- Placeholder -- */
     &::placeholder {
-        color: var(--body-color);
+        color: #D1D1D1;
         /* Firefox */
         opacity: 1;
     }

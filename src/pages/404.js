@@ -7,12 +7,12 @@ import client from "../../lib/apollo-client";
 import HeadTitle from "../common/elements/head/HeadTitle";
 import { formatPosts } from "../common/utils";
 
-const Error404 = ({allPosts}) => {
+const Error404 = () => {
     return (
         <>
             <HeadTitle pageTitle="404 Not Found" />
-            <Header postData={allPosts} pClass="header-light header-sticky header-with-shadow" />
-            <div className="error-area bg-color-grey" style={{backgroundImage: "url('/images/bg/bg-image-4.webp')"}}>
+            <Header pClass="header-light header-sticky header-with-shadow" />
+            <div className="error-area" style={{background: '#1A1A1A'}}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">

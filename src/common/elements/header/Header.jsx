@@ -5,7 +5,7 @@ import MobileMenu from "./MobileMenu";
 import Nav from "./Nav";
 import SocialData from "../../../data/social/SocialData.json";
 
-const Header = ({ postData }) => {
+const Header = () => {
   const [showMMenu, SetShowMMenu] = useState(false);
 
   const MobileShowHandler = () => SetShowMMenu(true);
@@ -106,7 +106,7 @@ const Header = ({ postData }) => {
               <div className="col-xl-7 col-12">
                 <div className="mainmenu-wrapper d-none d-xl-block">
                   <nav className="mainmenu-nav">
-                  <Nav posts={postData}/>
+                  <Nav />
                   </nav>
                 </div>
               </div>
@@ -147,22 +147,6 @@ const Header = ({ postData }) => {
                       </div>
                     </form>
                   </div>
-                  <ul className="metabar-block">
-                    <li className="icon">
-                      <Link href="#">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style={{height: 14, fill: '#FFF'}}>
-                            <path d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"/>
-                          </svg>
-                      </Link>
-                    </li>
-                    <li className="icon">
-                      <Link href="#" aria-label="Boton para ver notificaciones">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style={{height: 14, fill: '#FFF'}}>
-                            <path d="M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71z"/>
-                          </svg>
-                      </Link>
-                    </li>
-                  </ul>
                   {/* Start Hamburger Menu  */}
                   <div className="hamburger-menu d-block d-xl-none">
                     <div className="hamburger-inner">

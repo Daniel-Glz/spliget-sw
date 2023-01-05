@@ -30,7 +30,7 @@ const PostDetails = ({ post, posts }) => {
 	return (
 		<>
 			<HeadTitle pageTitle={post.title} />
-			<Header postData={posts} pClass="header-light header-sticky header-with-shadow"/>
+			<Header pClass="header-light header-sticky header-with-shadow"/>
 			<PostFormatHandler />
 			<Footer />
 		</>

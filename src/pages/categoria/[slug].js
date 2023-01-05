@@ -16,7 +16,7 @@ const PostCategory = ({ posts, categorySlug }) => {
 	return (
 		<>
 			<HeadTitle pageTitle="a" />
-			<Header postData={posts} />
+			<Header />
 			<BreadcrumbOne title={category.name} />
 			<div className="axil-post-list-area axil-section-gap bg-color-white">
 				<div className="container">
@@ -25,7 +25,7 @@ const PostCategory = ({ posts, categorySlug }) => {
 							<PostLayoutTwo dataPost={posts} show="5" />
 						</div>
 						<div className="col-lg-4 col-xl-4 mt_md--40 mt_sm--40">
-							<SidebarOne dataPost={posts} />
+							<SidebarOne />
 						</div>
 					</div>
 				</div>

@@ -5,12 +5,12 @@ import { gql } from "@apollo/client";
 import client from "../../lib/apollo-client";
 import { formatPosts, markdownToHtml } from "../common/utils";
 
-const PrivacyPolicy = ({privacyData, allPosts}) => {
+const PrivacyPolicy = ({ privacyData }) => {
     
     return ( 
         <>
         <HeadTitle pageTitle="Politica de privacidad"/>
-        <Header postData={allPosts} pClass="header-light header-sticky header-with-shadow"/>
+        <Header pClass="header-light header-sticky header-with-shadow"/>
         <div className="axil-privacy-area axil-section-gap bg-color-white">
             <div className="container">
                 <div className="row">

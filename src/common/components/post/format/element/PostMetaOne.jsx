@@ -24,7 +24,7 @@ const PostMetaOne = ({metaData}) => {
                 <div className="post-content">
                   <div className="post-cat">
                     <div className="post-cat-list">
-                        <Link legacyBehavior href={`/category/${metaData.primaryCategory.slug}`}>
+                        <Link legacyBehavior href={`/categoria/${metaData.primaryCategory.slug}`}>
                             <a className="hover-flip-item-wrapper">
                                 <span className="hover-flip-item">
                                 <span data-text={metaData.primaryCategory.name}>{metaData.primaryCategory.name}</span>

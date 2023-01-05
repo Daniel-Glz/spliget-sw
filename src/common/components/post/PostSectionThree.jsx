@@ -45,7 +45,7 @@ const PostSectionThree = ({ postData, adBanner, bgColor, heading }) => {
               <div className="post-content">
                 <div className="post-cat">
                   <div className="post-cat-list">
-                    <Link legacyBehavior href={`/category/${slugify(firstPost.cate)}`}>
+                    <Link legacyBehavior href={`/categoria/${slugify(firstPost.cate)}`}>
                       <a className="hover-flip-item-wrapper">
                         <span className="hover-flip-item">
                           <span data-text={firstPost.cate}>
@@ -114,7 +114,7 @@ const PostSectionThree = ({ postData, adBanner, bgColor, heading }) => {
                     <div className="post-content">
                       <div className="post-cat">
                         <div className="post-cat-list">
-                        <Link legacyBehavior href={`/category/${slugify(data.cate)}`}>
+                        <Link legacyBehavior href={`/categoria/${slugify(data.cate)}`}>
                           <a className="hover-flip-item-wrapper">
                             <span className="hover-flip-item">
                               <span data-text={data.cate}>

@@ -76,7 +76,7 @@ const SliderOne = ({ postData }) => {
                     <div className="post-content">
                       <div className="post-cat">
                         <div className="post-cat-list">
-                            <Link legacyBehavior href={`/category/${slugify(data.cate)}`}>
+                            <Link legacyBehavior href={`/categoria/${slugify(data.cate)}`}>
                                 <a className="hover-flip-item-wrapper">
                                     <span className="hover-flip-item">
                                         <span data-text={data.cate}>{data.cate}</span>

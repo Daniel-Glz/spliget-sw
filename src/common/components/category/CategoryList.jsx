@@ -20,7 +20,7 @@ const CategoryList = ({cateData}) => {
               {uniqueCategory.slice(0, 6).map((data, index) => (
                 <div className="single-cat" key={index}>
                 <div className="inner">
-                <Link href={`/category/${slugify(data.cate)}`}>
+                <Link href={`/categoria/${slugify(data.cate)}`}>
                     <div className="thumbnail">
                     <Image
                         src={data.cate_img}

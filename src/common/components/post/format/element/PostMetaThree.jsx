@@ -9,7 +9,7 @@ const PostMetaThree = ({ metaData }) => {
         <div className="post-content">
           <div className="post-cat">
             <div className="post-cat-list">
-              <Link legacyBehavior href={`/category/${slugify(metaData.cate)}`}>
+              <Link legacyBehavior href={`/categoria/${slugify(metaData.cate)}`}>
                     <a className="hover-flip-item-wrapper">
                         <span className="hover-flip-item">
                         	<span data-text={metaData.cate}>{metaData.cate}</span>

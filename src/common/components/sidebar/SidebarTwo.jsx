@@ -5,7 +5,7 @@ import WidgetTags from "./WidgetTags";
 
 const SidebarTwo = ({ dataPost, tagData }) => {
   return (
-    <div className="sidebar-inner">
+    <aside className="sidebar-inner">
       <WidgetSearch />
       <WidgetNewsletter />
       <WidgetAd
@@ -21,7 +21,7 @@ const SidebarTwo = ({ dataPost, tagData }) => {
         height={778}
         width={390}
       />
-    </div>
+    </aside>
   );
 };
 

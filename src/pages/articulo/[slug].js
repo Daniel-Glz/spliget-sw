@@ -49,6 +49,11 @@ export async function getStaticProps({ params }) {
 			  title
 			  date
 			  content
+			  author {
+				node {
+				  name
+				}
+			  }
 			  tags {
 				nodes {
 				  name

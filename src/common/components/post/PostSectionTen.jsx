@@ -73,7 +73,7 @@ const PostSectionTen = ({ postData }) => {
 									<div className="post-cat-list">
 										<Link
                     legacyBehavior
-										href={`/category/${data.slug}`}
+										href={`/categoria/${data.slug}`}
 										>
 										<a className="hover-flip-item-wrapper">
 											<span className="hover-flip-item">
@@ -115,7 +115,7 @@ const PostSectionTen = ({ postData }) => {
                               <div className="post-cat-list">
 							  <Link
                                   legacyBehavior
-                                  href={`/category/${firstPost.primaryCategory.slug}`}
+                                  href={`/categoria/${firstPost.primaryCategory.slug}`}
                                 >
                                   <a className="hover-flip-item-wrapper">
                                     <span className="hover-flip-item">

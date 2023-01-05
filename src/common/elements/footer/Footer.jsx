@@ -168,7 +168,7 @@ const Footer = () => {
                     <Link legacyBehavior href="/privacy-policy">
                       <a className="hover-flip-item-wrapper" rel="noreferrer" target="_blank">
                         <span className="hover-flip-item">
-                          <span data-text="Politica De Privacidad">Politica De Privacidad</span>
+                          <span data-text="Politica de privacidad">Politica de privacidad</span>
                         </span>
                       </a>
                     </Link>
@@ -190,7 +190,7 @@ const Footer = () => {
             <div className="col-lg-3 col-md-4">
               <div className="copyright-right text-start text-md-end mt_sm--20">
                 <p className="b3">
-                  Copyright © {new Date().getFullYear()} - Spliget Software
+                  Copyright © {new Date().getFullYear()} - Spliget SW
                 </p>
               </div>
             </div>

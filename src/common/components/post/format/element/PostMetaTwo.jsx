@@ -13,7 +13,7 @@ const PostMetaTwo = ({metaData}) => {
                 <div className="post-content">
                   <div className="post-cat">
                     <div className="post-cat-list">
-                        <Link legacyBehavior href={`/category/${metaData.primaryCategory.slug}`}>
+                        <Link legacyBehavior href={`/categoria/${metaData.primaryCategory.slug}`}>
                             <a className="hover-flip-item-wrapper">
                                 <span className="hover-flip-item">
                                 <span data-text={metaData.primaryCategory.name}>{metaData.primaryCategory.name}</span>
@@ -40,14 +40,13 @@ const PostMetaTwo = ({metaData}) => {
                                 <a
                                     className="hover-flip-item-wrapper">
                                     <span className="hover-flip-item">
-                                    <span data-text={"author_name"}>{"author name"}</span>
+                                    <span data-text={metaData.author}>{metaData.author}</span>
                                     </span>
                                 </a>
                             </Link>
                         </h6>
                         <ul className="post-meta-list">
                           <li>{metaData.date}</li>
-                          <li>{"post views"}</li>
                         </ul>
                       </div>
                     </div>

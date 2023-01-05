@@ -30,7 +30,7 @@ const PostLayoutTwo = ({ dataPost, postStart, show, bgColor }) => {
           <div className="post-content">
             <div className="post-cat">
               <div className="post-cat-list">
-                <Link legacyBehavior href={`/category/${data.slug}`}>
+                <Link legacyBehavior href={`/categoria/${data.slug}`}>
                   <a className="hover-flip-item-wrapper">
                     <span className="hover-flip-item">
                       <span data-text={data.primaryCategory.name}>{data.primaryCategory.name}</span>
@@ -68,7 +68,6 @@ const PostLayoutTwo = ({ dataPost, postStart, show, bgColor }) => {
                   </h6>
                   <ul className="post-meta-list">
                     <li>{data.date}</li>
-                    <li>{data.read_time}</li>
                   </ul>
                 </div>
               </div>

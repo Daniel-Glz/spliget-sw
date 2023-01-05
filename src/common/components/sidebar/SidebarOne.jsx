@@ -3,10 +3,10 @@ import WidgetNewsletter from "./WidgetNewsletter";
 
 const SidebarOne = () => {
   return (
-    <div className="sidebar-inner">
+    <aside className="sidebar-inner">
       <WidgetSearch />
       <WidgetNewsletter />
-    </div>
+    </aside>
   );
 };
 

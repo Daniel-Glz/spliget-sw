@@ -158,7 +158,7 @@ const PostSectionTwo = ({ postData, adBanner, headingTitle }) => {
                                 <div className="post-cat-list">
                                   <Link
                                     legacyBehavior
-                                    href={`/category/${slugify(data.cate)}`}
+                                    href={`/categoria/${slugify(data.cate)}`}
                                   >
                                     <a className="hover-flip-item-wrapper">
                                       <span className="hover-flip-item">

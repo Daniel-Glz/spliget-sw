@@ -64,7 +64,7 @@ const SliderTwo = ({postData}) => {
                         <div className="post-content">
                             <div className="post-cat">
                                 <div className="post-cat-list">
-                                <Link href={`/category/${slugify(data.cate)}`}>
+                                <Link href={`/categoria/${slugify(data.cate)}`}>
                                     {data.cate}
                                 </Link>
                                 </div>

@@ -6,6 +6,11 @@ const Nav = () => {
     return (
         <ul className="mainmenu">
             <li className="menu-item-has-children">
+                <Link href="/">
+                    Inicio
+                </Link>
+            </li>
+            <li className="menu-item-has-children">
                 <Link href="/categoria/tecnologia">
                     Tecnologia
                 </Link>
@@ -21,7 +26,7 @@ const Nav = () => {
                 </Link>
             </li>
             <li className="menu-item-has-children">
-                <Link href="/cateogria/diseno_web">
+                <Link href="/categoria/diseno_web">
                     Diseño Web
                 </Link>
             </li>

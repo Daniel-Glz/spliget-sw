@@ -13,9 +13,9 @@ const Header = ({ postData }) => {
 
   const [togglaClass, setTogglaClass] = useState(false);
 
-   const toggleHandler = () => {
+  const toggleHandler = () => {
         setTogglaClass(active => !active);
-   }
+  }
 
   return (
     <>
@@ -78,7 +78,7 @@ const Header = ({ postData }) => {
                                 className="dark-logo"
                                 width={165}
                                 height={59.58}
-                                src={`${process.env.NEXT_PUBLIC_SITE_URL}/images/logo/logo-spliget.png`}
+                                src={`/images/logo/logo-spliget.png`}
                                 alt="Spliget SW Logo"
                                 />
                         </Link>

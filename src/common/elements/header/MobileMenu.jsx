@@ -5,7 +5,6 @@ import MenuData from '../../../data/mobilemenu/MenuData.json';
 
 const MobileMenu = ({menuShow, menuHide}) => {
    const MenuToggleHandler = (e) => {
-
         let selectElm = e.target.nextSibling;
         selectElm.classList.toggle("open");
    }
@@ -20,7 +19,7 @@ const MobileMenu = ({menuShow, menuHide}) => {
                         className="dark-logo"
                         width={110}
                         height={40}
-                        src={`${process.env.NEXT_PUBLIC_SITE_URL}/images/logo/logo-spliget.png`}
+                        src={`/images/logo/logo-spliget.png`}
                         alt="Spliget SW Logo"
                         />
                 </Link>

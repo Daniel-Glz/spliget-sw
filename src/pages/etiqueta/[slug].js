@@ -1,14 +1,15 @@
 import { useRouter } from 'next/router'
-import { getAllPosts } from '../../../lib/api';
 import Footer from '../../common/elements/footer/Footer';
 import Header from '../../common/elements/header/Header';
 import PostLayoutTwo from '../../common/components/post/layout/PostLayoutTwo';
 import SidebarOne from "../../common/components/sidebar/SidebarOne";
 import BreadcrumbOne from '../../common/elements/breadcrumb/breadcrumbOne';
-import { slugify } from '../../common/utils';
+import { formatPosts } from '../../common/utils';
+import { gql } from '@apollo/client';
+import client from '../../../lib/apollo-client';
 
 
-const TagsArchive = ({ tagsData, allPosts }) => {
+const TagsArchive = ({ tagPosts, allPosts }) => {
 
     const router = useRouter()
 
@@ -16,17 +17,17 @@ const TagsArchive = ({ tagsData, allPosts }) => {
 
     return (
         <>
-            <Header postData={allPosts}/>
+            <Header postData={allPosts} />
             <BreadcrumbOne title={BreadCrumbTitle.replace('-', ' ')} />
             <div className="axil-post-list-area axil-section-gap bg-color-white">
                 <div className="container">
                     <div className="row">
-                    <div className="col-lg-8 col-xl-8">
-                        <PostLayoutTwo dataPost={tagsData} show="5"/>
-                    </div>
-                    <div className="col-lg-4 col-xl-4 mt_md--40 mt_sm--40">
-                        <SidebarOne dataPost={allPosts}/>
-                    </div>
+                        <div className="col-lg-8 col-xl-8">
+                            <PostLayoutTwo dataPost={tagPosts} show="5" />
+                        </div>
+                        <div className="col-lg-4 col-xl-4 mt_md--40 mt_sm--40">
+                            <SidebarOne dataPost={allPosts} />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -38,71 +39,110 @@ const TagsArchive = ({ tagsData, allPosts }) => {
 export default TagsArchive;
 
 
-export async function getStaticProps({params}) {
-    
+export async function getStaticProps({ params }) {
+
     const pageParams = params.slug;
 
-    const allPosts = getAllPosts([
-        'slug',
-		'cate',
-		'cate_img',
-		'title',
-		'featureImg',
-		'date',
-		'read_time',
-		'author_name',
-		'author_social',
-        'tags'
-    ]);
-
-    let tagsData = [];
-
-    for (let i = 0; i < allPosts.length; i++) {
-        const element = allPosts[i];
-        
-        element.tags.map((data) => {
-            var tagsList = (slugify(data));
-            if (tagsList.includes(pageParams)) {
-                tagsData.push(element);
+    const { data } = await client.query({
+        query: gql`
+        {
+            tagPosts: posts(first: 40, where: {tag: "${pageParams.slug}"}) {
+              nodes {
+                title
+                slug
+                date
+                author {
+                  node {
+                    name
+                  }
+                }
+                categories {
+                  edges {
+                    isPrimary
+                    node {
+                      name
+                      slug
+                    }
+                  }
+                }
+                featuredImage {
+                  node {
+                    sourceUrl
+                    altText
+                    srcSet
+                  }
+                }
+              }
             }
-        })    
-    }
+            posts(first: 15) {
+              nodes {
+                title
+                slug
+                date
+                author {
+                  node {
+                    name
+                  }
+                }
+                categories {
+                  edges {
+                    isPrimary
+                    node {
+                      name
+                      slug
+                    }
+                  }
+                }
+                featuredImage {
+                  node {
+                    sourceUrl
+                    altText
+                    srcSet
+                  }
+                }
+              }
+            }
+          }`
+    });
+
+    const tagPosts = formatPosts(data.tagPosts.nodes);
+    const allPosts = formatPosts(data.posts.nodes);
 
     return {
         props: {
-            tagsData,
+            tagPosts,
             allPosts
         },
         revalidate: 3 * 60 * 60
     }
 
-  }
+}
 
-  export async function getStaticPaths() {
-    const postData = getAllPosts(['tags']);
-
-    let tags = [];
+export async function getStaticPaths() {
     
-    for (let i = 0; i < postData.length; i++) {
-        let singleData = postData[i];
+    const { data } = await client.query({
+        query: gql`
+        {
+            tags {
+              nodes {
+                name
+                slug
+              }
+            }
+          }
+        `
+    });
 
-        singleData.tags.map((data) => {
-            tags.push(slugify(data));
-        }) 
-    }
-
-    const uniqTags = [...new Set(tags)];
-
-    const paths = uniqTags.map(data => ({
-        params: {
-            slug: data
-        }
+    const paths = data.tags.nodes.map((tag) => ({
+        params: { 
+            slug: tag.slug 
+        },
     }))
 
     return {
-      paths,
-      fallback: false,
+        paths,
+        fallback: false,
     }
-  }
+}
 
 

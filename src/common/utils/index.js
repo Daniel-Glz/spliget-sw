@@ -7,21 +7,21 @@ const formatPosts = function(posts) {
   }
   return posts.map((post) => {
     const { date, slug, title, categories, featuredImage, author, content, tags } = post;
-    const { sourceUrl, altText, srcSet } = featuredImage ? featuredImage.node : {sourceUrl: null, altText: null, srcSet: null};
+    const { sourceUrl, altText, srcSet } = featuredImage ? featuredImage.node : null;
     const { name } = author ? author.node : {name: null};
     const { edges } = categories;
-    const primaryCategory = edges.find((edge) => edge.isPrimary);
+    const primaryCategory = edges.find((edge) => edge.isPrimary).node;
     const listCategories = edges.map((edge) => edge.node);
 
     const formattedPost = {
       date: date ? DateTime.fromISO(date).toFormat('dd LLL yyyy') : null,
-      slug,
-      title,
-      author: name,
+      slug: slug ? slug : null,
+      title: title ? title : null,
+      author: name ? name : null,
       content: content ? content : null,
       tags: tags ? tags.nodes : null,
-      categories: listCategories,
-      primaryCategory: primaryCategory.node,
+      categories: listCategories ? listCategories : null,
+      primaryCategory: primaryCategory ? primaryCategory : null,
       featuredImage: {
         sourceUrl,
         altText,

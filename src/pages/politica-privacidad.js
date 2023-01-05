@@ -1,8 +1,10 @@
 import Footer from "../common/elements/footer/Footer";
 import Header from "../common/elements/header/Header";
-import { getFileContentBySlug, getAllPosts } from "../../lib/api";
 import markdownToHtml from "../../lib/markdownToHtml";
 import HeadTitle from "../common/elements/head/HeadTitle";
+import { gql } from "@apollo/client";
+import client from "../../lib/apollo-client";
+import { formatPosts } from "../common/utils";
 
 const PrivacyPolicy = ({privacyData, allPosts}) => {
     
@@ -36,20 +38,51 @@ export default PrivacyPolicy;
 
 
 export async function getStaticProps() {
-    const allPosts = getAllPosts([
-        'title',
-        'featureImg',
-        'slug',
-        'cate',
-    ])
-    const privacyData = getFileContentBySlug("PrivacyPolicy", "src/data/privacy");
+    const { data } = await client.query({
+        query: gql`
+        {
+            posts(first: 15) {
+                nodes {
+                  title
+                  slug
+                  date
+                  author {
+                    node {
+                      name
+                    }
+                  }
+                  categories {
+                    edges {
+                      isPrimary
+                      node {
+                        name
+                        slug
+                      }
+                    }
+                  }
+                  featuredImage {
+                    node {
+                      sourceUrl
+                      altText
+                      srcSet
+                    }
+                  }
+                }
+              }
+            }
+        `
+    });
 
-    const content = await markdownToHtml(privacyData.content || "")
+    const allPosts = formatPosts(data.posts.nodes);
+
+    const content = await markdownToHtml("")
 
     return {
         props: {
             privacyData: {
-                ...privacyData,
+                data: {
+                    sTitle: "Politica de privacidad"
+                },
                 content
             },
             allPosts

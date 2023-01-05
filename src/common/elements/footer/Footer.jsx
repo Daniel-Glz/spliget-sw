@@ -133,7 +133,7 @@ const Footer = () => {
               <Link href="/">
                   <Image
                     className="dark-logo"
-                    src={`${process.env.NEXT_PUBLIC_SITE_URL}/images/logo/logo-spliget.png`}
+                    src={`/images/logo/logo-spliget.png`}
                     alt="Spliget SW logo"
                     width={110}
                     height={40}

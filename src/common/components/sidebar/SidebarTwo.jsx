@@ -15,7 +15,7 @@ const SidebarTwo = ({ dataPost, tagData }) => {
       <WidgetNewsletter />
       <WidgetAd
         url="https://example.com/"
-        image="/images/post-single/ads-01.webp"
+        image="/images/add-banner/banner-01.webp"
         height={236}
         width={390}
       />

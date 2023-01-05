@@ -112,7 +112,7 @@ export async function getStaticProps({ params }) {
 			post,
 			posts
 		},
-		revalidate: 10 * 60 // 10 minutes
+		revalidate: 60
 	}
 }
 

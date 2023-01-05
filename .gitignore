@@ -12,9 +12,6 @@
 /.next/
 /out/
 
-# posts
-/posts
-
 # production
 /build
 

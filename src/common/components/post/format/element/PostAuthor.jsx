@@ -8,7 +8,7 @@ const PostAuthor = ({dataAuthor}) => {
         <div className="thumbnail">
             <Link href="#">
                     <Image
-                    src={"/images/author/author-01.jpg"}
+                    src={"/images/add-banner/banner-01.webp"}
                     alt={""}
                     height={105}
                     width={105}

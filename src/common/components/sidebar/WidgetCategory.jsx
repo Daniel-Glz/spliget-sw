@@ -15,7 +15,7 @@ const WidgetCategory = ({ catData }) => {
               <a className="inner">
                 <div className="thumbnail">
                   <Image
-                    src={"/"}
+                    src={"/images/add-banner/banner-01.webp"}
                     alt={"a"}
                     height={50}
                     width={50}

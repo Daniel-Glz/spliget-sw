@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { DateTime } from 'luxon'
+import { DateTime } from 'luxon';
+import { remark } from 'remark'
+import html from 'remark-html'
 
-const formatPosts = function(posts) {
+const formatPosts = (posts) => {
   if (!Array.isArray(posts)) {
     posts = [posts]
   }
@@ -32,7 +34,28 @@ const formatPosts = function(posts) {
   });
 }
 
-const slugify = function(text) {
+const formatCategories = (categories) => {
+  if (!Array.isArray(categories)) {
+    categories = [categories]
+  }
+  return categories.map((category) => {
+    const { name, slug, image } = category;
+    const { src } = image ? image : null;
+    const { sourceUrl, altText } = src ? src : null;
+
+    const formattedCategory = {
+      name: name ? name : null,
+      slug: slug ? slug : null,
+      image: {
+        sourceUrl,
+        altText,
+      },
+    };
+    return formattedCategory;
+  });
+}
+
+const slugify = (text) => {
     return text
       .toString()
       .toLowerCase()
@@ -43,7 +66,7 @@ const slugify = function(text) {
       .replace(/-+$/, ''); // Trim - from end of text
 }
 
-function removeDuplicates(originalArray, prop) {
+const removeDuplicates = (originalArray, prop) => {
   var newArray = [];
   var lookupObject  = {};
 
@@ -57,7 +80,7 @@ function removeDuplicates(originalArray, prop) {
    return newArray;
 }
 
-const SortingByDate = function(posts) {
+const SortingByDate = (posts) => {
   return posts
   .sort((post1, post2) => {
 
@@ -68,7 +91,12 @@ const SortingByDate = function(posts) {
 })
 }
 
-const HoverActiveClass = function(hoverRef) {
+const markdownToHtml = async (markdown) => {
+  const result = await remark().use(html).process(markdown)
+  return result.toString()
+}
+
+const HoverActiveClass = (hoverRef) => {
 	const [refLists, setrefLists] = useState([]);
 	
 	useEffect(() => {
@@ -88,4 +116,4 @@ const HoverActiveClass = function(hoverRef) {
 	});
 }
 
-export {formatPosts, slugify, removeDuplicates, SortingByDate, HoverActiveClass};
+export {formatPosts, formatCategories, slugify, removeDuplicates, SortingByDate, HoverActiveClass, markdownToHtml};

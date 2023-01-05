@@ -28,7 +28,7 @@ const PostMetaTwo = ({metaData}) => {
                     <div className="post-meta">
                       <div className="post-author-avatar border-rounded">
                       <Image
-                            src={"/image.png"}
+                            src={"/images/add-banner/banner-01.webp"}
                             alt={"Author Image"}
                             height={50}
                             width={50}

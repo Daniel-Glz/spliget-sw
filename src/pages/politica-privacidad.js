@@ -1,10 +1,9 @@
 import Footer from "../common/elements/footer/Footer";
 import Header from "../common/elements/header/Header";
-import markdownToHtml from "../../lib/markdownToHtml";
 import HeadTitle from "../common/elements/head/HeadTitle";
 import { gql } from "@apollo/client";
 import client from "../../lib/apollo-client";
-import { formatPosts } from "../common/utils";
+import { formatPosts, markdownToHtml } from "../common/utils";
 
 const PrivacyPolicy = ({privacyData, allPosts}) => {
     
@@ -86,6 +85,7 @@ export async function getStaticProps() {
                 content
             },
             allPosts
-        }
+        },
+        revalidate: 60
     }
 }

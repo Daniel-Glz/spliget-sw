@@ -66,6 +66,7 @@ export async function getStaticProps() {
     
     const posts = formatPosts(data.posts.nodes);
     return {
-      props: { posts }
+      props: { posts },
+      revalidate: 60
     }
 }

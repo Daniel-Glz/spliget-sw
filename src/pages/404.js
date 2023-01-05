@@ -80,6 +80,7 @@ export async function getStaticProps() {
     const allPosts = formatPosts(data.posts.nodes);
 
     return {
-      props: { allPosts }
+      props: { allPosts },
+      revalidate: 60,
     }
   }

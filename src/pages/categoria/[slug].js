@@ -79,7 +79,8 @@ export async function getStaticProps({ params }) {
 		props: { 
 			posts,
 			categorySlug: params.slug
-		}
+		},
+		revalidate: 60
 	}
 }
 

@@ -39,7 +39,7 @@ const PostMetaOne = ({metaData}) => {
                     <div className="post-meta">
                       <div className="post-author-avatar border-rounded">
                       <Image
-                            src={"/images/author/author-1.jpg"}
+                            src={"/images/add-banner/banner-01.webp"}
                             alt={"/images/author/author-1.jpg"}
                             height={50}
                             width={50}
@@ -51,7 +51,7 @@ const PostMetaOne = ({metaData}) => {
                                 <a
                                     className="hover-flip-item-wrapper">
                                     <span className="hover-flip-item">
-                                    <span data-text={"author_name"}>{"author_name"}</span>
+                                    <span data-text={metaData.author}>{metaData.author}</span>
                                     </span>
                                 </a>
                             </Link>

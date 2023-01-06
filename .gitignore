@@ -15,9 +15,6 @@
 # production
 /build
 
-# posts
-/posts
-
 # misc
 .DS_Store
 *.pem

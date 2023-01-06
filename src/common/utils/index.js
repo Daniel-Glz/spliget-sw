@@ -3,58 +3,6 @@ import { DateTime } from 'luxon';
 import { remark } from 'remark'
 import html from 'remark-html'
 
-const formatPosts = (posts) => {
-  if (!Array.isArray(posts)) {
-    posts = [posts]
-  }
-  return posts.map((post) => {
-    const { date, slug, title, categories, featuredImage, author, content, tags } = post;
-    const { sourceUrl, altText, srcSet } = featuredImage ? featuredImage.node : null;
-    const { name } = author ? author.node : {name: null};
-    const { edges } = categories;
-    const primaryCategory = edges.find((edge) => edge.isPrimary).node;
-    const listCategories = edges.map((edge) => edge.node);
-
-    const formattedPost = {
-      date: date ? DateTime.fromISO(date).toFormat('dd LLL yyyy') : null,
-      slug: slug ? slug : null,
-      title: title ? title : null,
-      author: name ? name : null,
-      content: content ? content : null,
-      tags: tags ? tags.nodes : null,
-      categories: listCategories ? listCategories : null,
-      primaryCategory: primaryCategory ? primaryCategory : null,
-      featuredImage: {
-        sourceUrl,
-        altText,
-        srcSet,
-      },
-    };
-    return formattedPost;
-  });
-}
-
-const formatCategories = (categories) => {
-  if (!Array.isArray(categories)) {
-    categories = [categories]
-  }
-  return categories.map((category) => {
-    const { name, slug, image } = category;
-    const { src } = image ? image : null;
-    const { sourceUrl, altText } = src ? src : null;
-
-    const formattedCategory = {
-      name: name ? name : null,
-      slug: slug ? slug : null,
-      image: {
-        sourceUrl,
-        altText,
-      },
-    };
-    return formattedCategory;
-  });
-}
-
 const slugify = (text) => {
     return text
       .toString()
@@ -116,4 +64,4 @@ const HoverActiveClass = (hoverRef) => {
 	});
 }
 
-export {formatPosts, formatCategories, slugify, removeDuplicates, SortingByDate, HoverActiveClass, markdownToHtml};
+export { slugify, removeDuplicates, SortingByDate, HoverActiveClass, markdownToHtml};

@@ -2,10 +2,7 @@ import Image from "next/legacy/image";
 import Link from 'next/link';
 import Footer from "../common/elements/footer/Footer";
 import Header from "../common/elements/header/Header";
-import { gql } from "@apollo/client";
-import client from "../../lib/apollo-client";
 import HeadTitle from "../common/elements/head/HeadTitle";
-import { formatPosts } from "../common/utils";
 
 const Error404 = () => {
     return (
@@ -46,41 +43,3 @@ const Error404 = () => {
 }
 
 export default Error404;
-
-
-export async function getStaticProps() {
-    const { data } = await client.query({
-        query: gql`
-        {
-			posts(first: 8) {
-			  nodes {
-				title
-				slug
-				categories {
-				  edges {
-					isPrimary
-					node {
-					  name
-					  slug
-					}
-				  }
-				}
-				featuredImage {
-				  node {
-					sourceUrl
-					altText
-					srcSet
-				  }
-				}
-			  }
-			}
-		  }
-        `
-    });
-    const allPosts = formatPosts(data.posts.nodes);
-
-    return {
-      props: { allPosts },
-      revalidate: 60,
-    }
-  }

@@ -4,25 +4,22 @@ import Footer from '../../common/elements/footer/Footer';
 import HeadTitle from "../../common/elements/head/HeadTitle";
 import Header from '../../common/elements/header/Header';
 import SidebarOne from "../../common/components/sidebar/SidebarOne";
-import categories from '../../data/categories/categories.json';
-import { gql } from '@apollo/client';
-import client from '../../../lib/apollo-client';
-import { formatPosts } from '../../common/utils';
+import { getPostsByCategory, getAllPosts } from '../../../lib/api';
+import { slugify } from '../../common/utils';
 
 
-const PostCategory = ({ posts, categorySlug }) => {
-	const category = categories.find(category => category.slug === categorySlug);
+const PostCategory = ({ allPosts, categoryName }) => {
 
 	return (
 		<>
-			<HeadTitle pageTitle="a" />
+			<HeadTitle pageTitle={`Lista de articulos ${categoryName}`} />
 			<Header />
-			<BreadcrumbOne title={category.name} />
+			<BreadcrumbOne title={categoryName} />
 			<div className="axil-post-list-area axil-section-gap bg-color-white">
 				<div className="container">
 					<div className="row">
 						<div className="col-lg-8 col-xl-8">
-							<PostLayoutTwo dataPost={posts} show="5" />
+							<PostLayoutTwo dataPost={allPosts} show="5" />
 						</div>
 						<div className="col-lg-4 col-xl-4 mt_md--40 mt_sm--40">
 							<SidebarOne />
@@ -38,57 +35,36 @@ const PostCategory = ({ posts, categorySlug }) => {
 
 export default PostCategory;
 
-
 export async function getStaticProps({ params }) {
-	const { data } = await client.query({
-		query: gql`
-		{
-			posts(first: 40, where: {categoryName: "${params.slug}"}) {
-			  nodes {
-				title
-				slug
-				date
-				author {
-				  node {
-					name
-				  }
-				}
-				categories {
-				  edges {
-					isPrimary
-					node {
-					  name
-					  slug
-					}
-				  }
-				}
-				featuredImage {
-				  node {
-					sourceUrl
-					altText
-					srcSet
-				  }
-				}
-			  }
-			}
-		  }`
-	});
-	const posts = formatPosts(data.posts.nodes);
+	const categoryName = params.slug;
 
+	const allPosts = getPostsByCategory(categoryName, [
+		'postFormat',
+        'slug',
+        'title',
+        'description',
+        'date',
+        'lastMod',
+        'featuredImage',
+        'featuredImageAlt',
+        'authorName',
+	]);
+	
 	return {
-		props: { 
-			posts,
-			categorySlug: params.slug
-		},
-		revalidate: 60
+		props: {
+			allPosts,
+			categoryName
+		}
 	}
 }
 
 
 export async function getStaticPaths() {
-	const paths = categories.map(category => ({
+	const posts = getAllPosts(['category']);
+
+	const paths = posts.map(post => ({
 		params: {
-			slug: category.slug
+			slug: slugify(post.category)
 		}
 	}))
 

@@ -4,7 +4,7 @@ import PostMetaTwo from "./element/PostMetaTwo";
 import PostComment from "./element/PostComment";
 import PostTagShare from "./element/PostTagShare";
 
-const PostFormatVideo = ({ postData, allData}) => {
+const PostFormatVideo = ({ postData }) => {
 
   const basePathLink = process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_BASEPATH ?? "" : "";
   
@@ -33,7 +33,7 @@ const PostFormatVideo = ({ postData, allData}) => {
               </div>
             </div>
             <div className="col-lg-4">
-              <SidebarTwo dataPost={allData} tagData={postData}/>
+              <SidebarTwo tagData={postData}/>
             </div>
           </div>
         </div>

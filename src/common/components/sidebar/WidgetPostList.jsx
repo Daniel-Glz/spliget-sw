@@ -12,8 +12,8 @@ const WidgetPostList = ({ postData }) => {
             <div className="post-thumbnail">
               <Link href={`/articulo/${data.slug}`}>
                   <Image
-                    src={data.featuredImage.sourceUrl}
-                    alt={data.featuredImage.altText}
+                    src={data.featuredImage}
+                    alt={data.featuredImageAlt}
                     height={100}
                     width={100}
                     priority={true}

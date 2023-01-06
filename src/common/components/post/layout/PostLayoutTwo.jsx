@@ -3,29 +3,24 @@ import Image from "next/legacy/image";
 const PostLayoutTwo = ({ dataPost, postStart, show, bgColor }) => { 
   return (
     <>
-      {dataPost.slice(postStart || 0, show).map((data) => (
+      {dataPost.slice(postStart || 0, show).map((data, index) => (
         <div
-          className={`content-block post-list-view axil-control mt--30 ${bgColor || ""} ${data.sticky === true ? "sticky": ""} ${data.postFormat === 'quote' ? "format-quote" : ""}`}
+          className={`content-block post-list-view axil-control mt--30 ${bgColor || ""}`}
           key={data.slug}
         >
-			{data.featuredImage ? 
+			{data.featuredImage && 
 			<div className="post-thumbnail">
 				<Link href={`/articulo/${data.slug}`}>
 					<Image
-					src={data.featuredImage.sourceUrl}
-					alt={data.featuredImage.altText}
+					src={data.featuredImage}
+					alt={data.featuredImageAlt}
 					height={250}
 					width={295}
-					priority={true}
+					priority={index < 4}
 					/>
 				</Link>
-				{data.playBtn === true ? 
-				<Link legacyBehavior href={`/articulo/${data.slug}`}>
-					<a className="video-popup size-medium position-top-center icon-color-secondary"><span className="play-icon"></span></a>
-				</Link>
-				: ""}
 			</div>
-			: "" }
+      }
 
           <div className="post-content">
             <div className="post-cat">
@@ -33,7 +28,7 @@ const PostLayoutTwo = ({ dataPost, postStart, show, bgColor }) => {
                 <Link legacyBehavior href={`/categoria/${data.slug}`}>
                   <a className="hover-flip-item-wrapper">
                     <span className="hover-flip-item">
-                      <span data-text={data.primaryCategory.name}>{data.primaryCategory.name}</span>
+                      <span data-text={data.category}>{data.category}</span>
                     </span>
                   </a>
                 </Link>
@@ -56,11 +51,11 @@ const PostLayoutTwo = ({ dataPost, postStart, show, bgColor }) => {
               <div className="post-meta">
                 <div className="content">
                   <h6 className="post-author-name">
-                    <Link legacyBehavior href={`/author/${data.author}`}>
+                    <Link legacyBehavior href={`/author/`}>
                       <a className="hover-flip-item-wrapper">
                         <span className="hover-flip-item">
-                          <span data-text={data.author}>
-                            {data.author}
+                          <span data-text={data.authorName}>
+                            {data.authorName}
                           </span>
                         </span>
                       </a>

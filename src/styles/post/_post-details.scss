@@ -153,11 +153,22 @@ blockquote {
 .post-details-content {
     margin-bottom: 40px;
     p {
+        line-height: 34px;
         em {
             font-size: 12px;
             margin-top: 20px;
             display: block;
             font-style: normal;
+        }
+        a {
+            color: var(--color-primary) !important;
+        }
+    }
+    li {
+        margin: 30px 0;
+        p > strong {
+            display: block;
+            margin-bottom: 10px;
         }
     }
 }

@@ -1,10 +1,8 @@
 import ReactAudioPlayer from 'react-audio-player';
-import PostAuthor from "./element/PostAuthor";
 import SidebarTwo from "../../sidebar/SidebarTwo";
 import PostMetaTwo from "./element/PostMetaTwo";
-import PostComment from "./element/PostComment";
 
-const PostFormatAudio = ({ postData, allData }) => {
+const PostFormatAudio = ({ postData }) => {
 
     const basePathLink = process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_BASEPATH ?? "" : "";
   
@@ -34,7 +32,7 @@ const PostFormatAudio = ({ postData, allData }) => {
               </div>
             </div>
             <div className="col-lg-4">
-              <SidebarTwo dataPost={allData} tagData={postData} />
+              <SidebarTwo />
             </div>
           </div>
         </div>

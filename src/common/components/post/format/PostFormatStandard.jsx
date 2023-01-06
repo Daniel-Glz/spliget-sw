@@ -2,7 +2,7 @@ import PostMetaOne from "./element/PostMetaOne";
 import SidebarTwo from "../../sidebar/SidebarTwo";
 import PostMetaTwo from "./element/PostMetaTwo";
 
-const PostFormatStandard = ({ postData, allData}) => {
+const PostFormatStandard = ({ postData }) => {
   const basePathLink = process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_BASEPATH ?? "" : "";
   
   const postContent = postData.content.replaceAll('/images/', basePathLink + '/images/');
@@ -21,7 +21,7 @@ const PostFormatStandard = ({ postData, allData}) => {
               </div>
             </div>
             <div className="col-lg-4">
-              <SidebarTwo dataPost={allData} tagData={postData}/>
+              <SidebarTwo />
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import Image from "next/legacy/image";
 import Link from "next/link";
+import { slugify } from "../../../../utils";
 
 const PostMetaOne = ({metaData}) => {
 
@@ -13,8 +14,8 @@ const PostMetaOne = ({metaData}) => {
                 {/* Start Post Thumbnail  */}
                 <div className="post-thumbnail">
                 <Image
-                    src={metaData.featuredImage.sourceUrl}
-                    alt={metaData.title}
+                    src={metaData.featuredImage}
+                    alt={metaData.featuredImageAlt}
                     height={720}
                     width={1440}
                   />
@@ -24,10 +25,10 @@ const PostMetaOne = ({metaData}) => {
                 <div className="post-content">
                   <div className="post-cat">
                     <div className="post-cat-list">
-                        <Link legacyBehavior href={`/categoria/${metaData.primaryCategory.slug}`}>
+                        <Link legacyBehavior href={`/categoria/${slugify(metaData.category)}`}>
                             <a className="hover-flip-item-wrapper">
                                 <span className="hover-flip-item">
-                                <span data-text={metaData.primaryCategory.name}>{metaData.primaryCategory.name}</span>
+                                <span data-text={metaData.category}>{metaData.category}</span>
                                 </span>
                             </a>
                         </Link>
@@ -51,7 +52,7 @@ const PostMetaOne = ({metaData}) => {
                                 <a
                                     className="hover-flip-item-wrapper">
                                     <span className="hover-flip-item">
-                                    <span data-text={metaData.author}>{metaData.author}</span>
+                                    <span data-text={metaData.authorName}>{metaData.authorName}</span>
                                     </span>
                                 </a>
                             </Link>

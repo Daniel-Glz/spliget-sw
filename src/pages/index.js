@@ -5,13 +5,12 @@ import Header from "../common/elements/header/Header";
 import SidebarOne from "../common/components/sidebar/SidebarOne";
 import PostLayoutTwo from "../common/components/post/layout/PostLayoutTwo";
 import HeadTitle from "../common/elements/head/HeadTitle";
-import { gql } from "@apollo/client";
-import client from "../../lib/apollo-client";
-import { formatPosts } from "../common/utils";
+import { getAllPosts } from "../../lib/api";
+import { SortingByDate } from "../common/utils";
 
-const PostListPage = ({ posts }) => {
+const PostListPage = ({ allPosts }) => {
 
-    const [blogs] = useState(posts);
+    const [blogs] = useState(allPosts);
     const [pageNumber, setPageNumber] = useState(0);
 
     const blogsPerPage = 5;
@@ -26,13 +25,13 @@ const PostListPage = ({ posts }) => {
     return (
         <>
         <HeadTitle />
-            <Header pClass="header-light header-sticky header-with-shadow" />
+            <Header pClass="header-light header-sticky header-with-shadow" isHome />
+            <h2 className="visually-hidden">Ultimos articulos</h2>
             <div className="axil-post-list-area axil-section-gap bg-color-white">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-8 col-xl-8">
-                            <PostLayoutTwo dataPost={posts} show={pageVisited + blogsPerPage} postStart={pageVisited} />
-
+                            <PostLayoutTwo dataPost={allPosts} show={pageVisited + blogsPerPage} postStart={pageVisited} />
                             <ReactPaginate
                                 previousLabel={
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -68,44 +67,23 @@ export default PostListPage;
 
 
 export async function getStaticProps() {
+    const allPosts = getAllPosts([
+        'postFormat',
+        'slug',
+        'title',
+        'description',
+        'date',
+        'lastMod',
+        'featuredImage',
+        'featuredImageAlt',
+        'authorName',
+        'authorImage',
+        'category',
+    ])
 
-    const { data } = await client.query({
-      query: gql`
-      {
-        posts (first: 40) {
-          nodes {
-            title
-            slug
-            date
-            author {
-              node {
-                name
-              }
-            }
-            categories {
-              edges {
-                isPrimary
-                node {
-                  name
-                  slug
-                }
-              }
-            }
-            featuredImage {
-              node {
-                sourceUrl
-                altText
-                srcSet
-              }
-            }
-          }
-        }
-      }`
-    });
-    
-    const posts = formatPosts(data.posts.nodes);
+    SortingByDate(allPosts);
     return {
-      props: { posts },
-      revalidate: 60
+        props: { allPosts },
+        revalidate: 60 * 5
     }
 }

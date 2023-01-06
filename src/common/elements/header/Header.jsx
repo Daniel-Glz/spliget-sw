@@ -3,9 +3,8 @@ import Image from "next/legacy/image";
 import Link from "next/link";
 import MobileMenu from "./MobileMenu";
 import Nav from "./Nav";
-import SocialData from "../../../data/social/SocialData.json";
 
-const Header = () => {
+const Header = ({ isHome }) => {
   const [showMMenu, SetShowMMenu] = useState(false);
 
   const MobileShowHandler = () => SetShowMMenu(true);
@@ -28,11 +27,11 @@ const Header = () => {
                   <ul className="header-top-nav liststyle d-flex flrx-wrap align-items-center">
                     <li className="header-top-nav__first">
                       <Link href="#">
-                        Politica de privacidad
+                        Publicidad
                       </Link>
                     </li>
                     <li>
-                      <Link href="#">
+                      <Link href="/contacto">
                         Contactanos
                       </Link>
                     </li>
@@ -59,6 +58,9 @@ const Header = () => {
                                 alt="Spliget SW Logo"
                                 />
                         </Link>
+                        {
+                          isHome && <h1 className="visually-hidden">Spliget SW</h1>
+                        }
                     </div>
                 </div>     
                 <div className="col-lg-9 col-md-8 col-sm-6" style={{display: 'none'}}>

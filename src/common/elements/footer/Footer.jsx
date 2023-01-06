@@ -156,19 +156,10 @@ const Footer = () => {
               <div className="copyright-left">
                 <ul className="mainmenu justify-content-start">
                   <li>
-                    <Link legacyBehavior href="/about">
+                    <Link legacyBehavior href="/contacto">
                       <a className="hover-flip-item-wrapper" rel="noreferrer" target="_blank">
                         <span className="hover-flip-item">
-                          <span data-text="Contactanos">Contactanos</span>
-                        </span>
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link legacyBehavior href="/privacy-policy">
-                      <a className="hover-flip-item-wrapper" rel="noreferrer" target="_blank">
-                        <span className="hover-flip-item">
-                          <span data-text="Politica de privacidad">Politica de privacidad</span>
+                          <span data-text="Contacto">Contacto</span>
                         </span>
                       </a>
                     </Link>

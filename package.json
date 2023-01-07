@@ -7,8 +7,11 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export && next-export-optimize-images",
-    "start": "npx http-server out -p 443",
+    "build": "next build && next export && next-export-optimize-images && next-sitemap",
+    "export": "next export",
+    "optimize-images": "next-export-optimize-images",
+    "sitemap": "next-sitemap",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
@@ -18,10 +21,10 @@
     "framer-motion": "^6.5.1",
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
-    "http-server": "^14.1.1",
     "luxon": "^3.0.1",
     "next": "^13.1.0",
     "next-export-optimize-images": "^2.0.0",
+    "next-sitemap": "^3.1.44",
     "path": "^0.12.7",
     "react": "^18.2.0",
     "react-audio-player": "^0.17.0",

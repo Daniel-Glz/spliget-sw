@@ -48,6 +48,7 @@ export async function getStaticProps({ params }) {
         'featuredImage',
         'featuredImageAlt',
         'authorName',
+		'category'
 	]);
 	
 	return {
@@ -60,7 +61,9 @@ export async function getStaticProps({ params }) {
 
 
 export async function getStaticPaths() {
-	const posts = getAllPosts(['category']);
+	let posts = getAllPosts(['category']);
+	posts.push({ category: 'Javascript' });
+	posts.push({ category: 'Nextjs' });
 
 	const paths = posts.map(post => ({
 		params: {

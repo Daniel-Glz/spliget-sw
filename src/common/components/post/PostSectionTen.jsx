@@ -4,7 +4,6 @@ import Image from "next/legacy/image";
 import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
 import { SectionTitleOne } from "../../elements/sectionTitle/SectionTitle";
-import categories from "../../../data/categories/categories.json";
 
 const activeCategorySlug = categories[0].slug;
 

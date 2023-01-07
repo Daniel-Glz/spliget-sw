@@ -64,4 +64,18 @@ const HoverActiveClass = (hoverRef) => {
 	});
 }
 
-export { slugify, removeDuplicates, SortingByDate, HoverActiveClass, markdownToHtml};
+const orderPostsByCategory = (posts, categories) => {
+  let data = [];
+  categories.forEach((category) => {
+    if (category.toLowerCase() === "recientes") {
+      data.push({ category, posts: posts.slice(0, 3) });
+      return;
+    }
+    const filteredPosts = posts.filter((post) => post.category.toLowerCase() === category.toLowerCase());
+    data.push({ category, posts: filteredPosts });
+  });
+
+  return data;
+}
+
+export { slugify, removeDuplicates, SortingByDate, HoverActiveClass, markdownToHtml, orderPostsByCategory};

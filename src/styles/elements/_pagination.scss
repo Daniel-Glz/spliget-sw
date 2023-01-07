@@ -12,7 +12,7 @@ Pagination
     padding: 0;
     width: 100%;
     @media #{$large-mobile}{
-        margin: -2px;
+        margin: 30px -2px -2px -2px;
     }
     li {
         margin: 3px;
@@ -31,8 +31,8 @@ Pagination
             transition: all 0.5s;
             border: 1px solid #b3b3b3;
             border-radius: 4px;
-            i {
-                font-weight: 300;
+            svg {
+                fill: var(--color-lightest);
             }
             &:hover {
                 background: var(--color-secondary);
@@ -51,9 +51,9 @@ Pagination
         }
         &.current {
             a {
-                background: var(--color-secondary);
-                color: #ffffff;
-                border-color: var(--color-secondary);
+                background: var(--color-primary);
+                color: white;
+                border-color: var(--color-primary);
             }
         }
         &.disabled {

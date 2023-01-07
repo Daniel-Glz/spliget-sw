@@ -66,6 +66,9 @@ Post List Style
                 }
             }
         }
+        .teaser-title {
+            font-size: var(--h4) !important;
+        }
     }
 
     &:hover {

@@ -11,23 +11,18 @@ const Nav = () => {
                 </Link>
             </li>
             <li className="menu-item-has-children">
-                <Link href="/categoria/tecnologia">
-                    Tecnologia
+                <Link href="/categoria/wordpress">
+                    Wordpress
                 </Link>
             </li>
             <li className="menu-item-has-children">
-                <Link href="/categoria/gadgets">
-                    Gadgets
+                <Link href="/categoria/javascript">
+                    Javascript
                 </Link>
             </li>
             <li className="menu-item-has-children">
-                <Link href="/categoria/programacion">
-                    Programacion
-                </Link>
-            </li>
-            <li className="menu-item-has-children">
-                <Link href="/categoria/diseno_web">
-                    Diseño Web
+                <Link href="/categoria/nextjs">
+                    Next.js
                 </Link>
             </li>
         </ul>

@@ -58,7 +58,7 @@ const PostListPage = ({ allPosts }) => {
                     </div>
                 </div>
             </div>
-            <Footer />
+            <Footer postsData={allPosts}/>
         </>
     );
 }
@@ -79,8 +79,7 @@ export async function getStaticProps() {
         'authorName',
         'authorImage',
         'category',
-    ])
-
+    ]);
     SortingByDate(allPosts);
     return {
         props: { allPosts },

@@ -66,7 +66,7 @@ export async function getStaticPaths() {
 	
 	const paths = posts.map(post => ({
 		params: {
-			slug: post.slug
+			slug: post.slug,
 		}
 	}));
 

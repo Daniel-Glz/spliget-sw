@@ -8,7 +8,6 @@ featuredImage: '/images/posts/wordpress-banner.png'
 featuredImageAlt: 'Logo de Wordpress'
 authorName: 'Daniel Alexis Gonzalez Perez'
 authorImage: 'https://avatars.githubusercontent.com/u/54653600?v=4'
-category: 'Wordpress'
 
 ---
 ![Wordpress logo](/images/posts/wordpress-banner.png)

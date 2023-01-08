@@ -4,10 +4,10 @@ import Footer from '../../common/elements/footer/Footer';
 import PostFormatVideo from '../../common/components/post/format/PostFormatVideo';
 import PostFormatGallery from '../../common/components/post/format/PostFormatGallery';
 import PostFormatAudio from '../../common/components/post/format/PostFormatAudio';
-import { getAllPosts, getPostBySlug } from '../../../lib/api';
+import { getAllPosts, getPostBySlug, getPostsByCategory } from '../../../lib/api';
 import { markdownToHtml } from '../../common/utils';
 
-const PostDetails = ({ post }) => {
+const PostDetails = ({ post, footerPosts }) => {
 	
 	const PostFormatHandler = () => {
 		switch (post.format) {
@@ -25,7 +25,7 @@ const PostDetails = ({ post }) => {
 			<HeadTitle pageTitle={post.title} />
 			<Header pClass="header-light header-sticky header-with-shadow"/>
 			<PostFormatHandler />
-			<Footer />
+			<Footer postsData={footerPosts}/>
 		</>
 	);
 }
@@ -48,6 +48,12 @@ export async function getStaticProps({ params }) {
         'category',
 	]);
 	
+	const footerPosts = getAllPosts([
+		'slug',
+		'title',
+		'category'
+	]);
+
 	const content = await markdownToHtml(post.content || '');
 
 	return {
@@ -55,7 +61,8 @@ export async function getStaticProps({ params }) {
 			post: {
 				...post,
 				content,
-			}
+			},
+			footerPosts,
 		},
 	}
 }
@@ -67,6 +74,7 @@ export async function getStaticPaths() {
 	const paths = posts.map(post => ({
 		params: {
 			slug: post.slug,
+			revalidate: 60 * 10,
 		}
 	}));
 

@@ -6,7 +6,7 @@ import SidebarOne from "../common/components/sidebar/SidebarOne";
 import PostLayoutTwo from "../common/components/post/layout/PostLayoutTwo";
 import HeadTitle from "../common/elements/head/HeadTitle";
 import { getAllPosts } from "../../lib/api";
-import { SortingByDate } from "../common/utils";
+import { sortingByDate } from "../common/utils";
 
 const PostListPage = ({ allPosts }) => {
 
@@ -80,7 +80,9 @@ export async function getStaticProps() {
         'authorImage',
         'category',
     ]);
-    SortingByDate(allPosts);
+
+    sortingByDate(allPosts);
+
     return {
         props: { allPosts },
         revalidate: 60 * 5

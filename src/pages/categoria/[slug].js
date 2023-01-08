@@ -4,15 +4,14 @@ import Footer from '../../common/elements/footer/Footer';
 import HeadTitle from "../../common/elements/head/HeadTitle";
 import Header from '../../common/elements/header/Header';
 import SidebarOne from "../../common/components/sidebar/SidebarOne";
-import { getPostsByCategory, getAllPosts } from '../../../lib/api';
-import { slugify } from '../../common/utils';
+import { getPostsByCategory, getCategories, getAllPosts } from '../../../lib/api';
 
 
-const PostCategory = ({ allPosts, categoryName }) => {
+const PostCategory = ({ allPosts, footerPosts, categoryName }) => {
 
 	return (
 		<>
-			<HeadTitle pageTitle={`Lista de articulos ${categoryName}`} />
+			<HeadTitle pageTitle={`${categoryName} - Lista de articulos`} />
 			<Header />
 			<BreadcrumbOne title={categoryName} />
 			<div className="axil-post-list-area axil-section-gap bg-color-white">
@@ -27,7 +26,7 @@ const PostCategory = ({ allPosts, categoryName }) => {
 					</div>
 				</div>
 			</div>
-			<Footer />
+			<Footer postsData={footerPosts}/>
 
 		</>
 	);
@@ -50,24 +49,28 @@ export async function getStaticProps({ params }) {
         'authorName',
 		'category'
 	]);
+
+	const footerPosts = getAllPosts([
+		'slug',
+		'title',
+		'category'
+	]);
 	
 	return {
 		props: {
 			allPosts,
-			categoryName
+			footerPosts,
+			categoryName: categoryName[0].toUpperCase() + categoryName.slice(1)
 		}
 	}
 }
 
 
 export async function getStaticPaths() {
-	let posts = getAllPosts(['category']);
-	posts.push({ category: 'Javascript' });
-	posts.push({ category: 'Nextjs' });
-
-	const paths = posts.map(post => ({
+	const categories = getCategories();
+	const paths = categories.map(category => ({
 		params: {
-			slug: slugify(post.category)
+			slug: category
 		}
 	}))
 

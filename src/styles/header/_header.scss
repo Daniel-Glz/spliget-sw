@@ -55,7 +55,7 @@ Header Styles
         }
         .mobile-search-wrapper {
             .search-button-toggle {
-                background-color: var(--color-lightest);
+                background-color: #242424;
                 width: 40px;
                 height: 40px;
                 line-height: 39px;
@@ -70,6 +70,7 @@ Header Styles
                 justify-content: center;
                 svg {
                     width: 16px;
+                    fill: #878787;
                 }
                 &:hover {
                     background-color: var(--color-primary);
@@ -84,7 +85,7 @@ Header Styles
                 }
             }
             .header-search-form {
-                background-color: #F0F2F5;
+                background-color: #1a1a1a;
                 position: absolute;
                 top: 100%;
                 left: 0;
@@ -100,7 +101,6 @@ Header Styles
                         max-width: 100%;
                         border-radius: 4px;
                         height: 50px;
-                        background-color: var(--color-white);
                         padding-left: 20px;
                         padding-right: 45px;
                     }

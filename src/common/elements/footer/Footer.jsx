@@ -3,7 +3,7 @@ import Link from "next/link";
 import { orderPostsByCategory } from "../../utils";
 
 const Footer = ({postsData}) => {
-  postsData = [];
+  postsData = orderPostsByCategory(postsData, ["Recientes", "Wordpress", "Javascript", "Nextjs"]);
 
   return (
     <footer className="axil-footer-area axil-footer-style-1 footer-variation-2">

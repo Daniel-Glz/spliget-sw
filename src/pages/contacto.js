@@ -7,7 +7,7 @@ import WidgetSocialShare from "../common/components/sidebar/WidgetSocialShare";
 import FormOne from "../common/components/form/FormOne";
 import HeadTitle from "../common/elements/head/HeadTitle";
 import { getAllPosts } from "../../lib/api";
-import { SortingByDate } from "../common/utils";
+import { sortingByDate } from "../common/utils";
 
 const ContactUs = ({ allPosts }) => {
   return (
@@ -45,7 +45,7 @@ const ContactUs = ({ allPosts }) => {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer postsData={allPosts}/>
     </>
   );
 }
@@ -68,7 +68,8 @@ export async function getStaticProps() {
     'category',
   ])
 
-  SortingByDate(allPosts);
+  sortingByDate(allPosts);
+
   return {
     props: { allPosts },
     revalidate: 60 * 5

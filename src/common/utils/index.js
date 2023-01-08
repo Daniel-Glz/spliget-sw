@@ -28,7 +28,7 @@ const removeDuplicates = (originalArray, prop) => {
    return newArray;
 }
 
-const SortingByDate = (posts) => {
+const sortingByDate = (posts) => {
   return posts
   .sort((post1, post2) => {
 
@@ -78,4 +78,4 @@ const orderPostsByCategory = (posts, categories) => {
   return data;
 }
 
-export { slugify, removeDuplicates, SortingByDate, HoverActiveClass, markdownToHtml, orderPostsByCategory};
+export { slugify, removeDuplicates, sortingByDate, HoverActiveClass, markdownToHtml, orderPostsByCategory};

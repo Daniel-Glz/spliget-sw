@@ -3,11 +3,12 @@ import Link from 'next/link';
 import Footer from "../common/elements/footer/Footer";
 import Header from "../common/elements/header/Header";
 import HeadTitle from "../common/elements/head/HeadTitle";
+import { getAllPosts } from "../../lib/api";
 
-const Error404 = () => {
+const Error404 = ({ footerPosts }) => {
     return (
         <>
-            <HeadTitle pageTitle="404 Not Found" />
+            <HeadTitle pageTitle="404 Pagina no encontrada!" />
             <Header pClass="header-light header-sticky header-with-shadow" />
             <div className="error-area" style={{background: '#1A1A1A'}}>
                 <div className="container">
@@ -37,9 +38,23 @@ const Error404 = () => {
                 </div>
             </div>
 
-            <Footer />
+            <Footer postsData={footerPosts}/>
         </>
     );
 }
 
 export default Error404;
+
+export async function getStaticProps() {
+	const footerPosts = getAllPosts([
+		'slug',
+		'title',
+		'category'
+	]);
+	
+	return {
+		props: {
+			footerPosts,
+		}
+	}
+}

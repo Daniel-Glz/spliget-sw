@@ -42,15 +42,15 @@ const PostLayoutTwo = ({ dataPost, postStart, show, bgColor }) => {
 				</Link>
 				</h4>
 			</blockquote> : 
-			<h2 className="title teaser-title">
+			<h3 className="title teaser-title">
               <Link href={`/articulo/${data.slug}`}>
                 {data.title}
               </Link>
-      </h2>}
+      </h3>}
             <div className="post-meta-wrapper">
               <div className="post-meta">
                 <div className="content">
-                  <h6 className="post-author-name">
+                  <div className="post-author-name h6">
                     <Link legacyBehavior href={`/author/`}>
                       <a className="hover-flip-item-wrapper">
                         <span className="hover-flip-item">
@@ -60,7 +60,7 @@ const PostLayoutTwo = ({ dataPost, postStart, show, bgColor }) => {
                         </span>
                       </a>
                     </Link>
-                  </h6>
+                  </div>
                   <ul className="post-meta-list">
                     <li>{data.date}</li>
                   </ul>

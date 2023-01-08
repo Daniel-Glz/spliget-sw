@@ -36,6 +36,7 @@ Sidebar Styles
         padding-bottom: 7px;
         margin-bottom: 20px;
         text-align: center;
+        color: #fff !important;
     }
 
     // Widget Categories 
@@ -127,6 +128,9 @@ Sidebar Styles
     }
 
     &.widget_newsletter {
+        .h4 {
+            color: #fff !important;
+        }
         p {
             br {
                 @media #{$lg-layout} {

@@ -2,7 +2,7 @@ const WidgetNewsletter = () => {
   return (
     <div className="axil-single-widget widget widget_newsletter mb--30">
       <div className="newsletter-inner text-center">
-        <h4 className="title mb--15">No te pierdas un articulo!</h4>
+        <div className="title mb--15 h4">No te pierdas un articulo!</div>
         <p className="b2 mb--30">
           Registrate y se el primero en enterarte de las novedades.
         </p>

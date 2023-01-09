@@ -55,7 +55,6 @@ export async function getStaticProps() {
 	return {
 		props: {
 			footerPosts,
-		},
-        revalidate: 60 * 60 * 24
+		}
 	}
 }

@@ -87,7 +87,6 @@ export async function getStaticProps() {
     sortingByDate(allPosts);
 
     return {
-        props: { allPosts },
-        revalidate: 60 * 5
+        props: { allPosts }
     }
 }

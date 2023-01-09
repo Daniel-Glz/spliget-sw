@@ -64,7 +64,6 @@ export async function getStaticProps({ params }) {
 			},
 			footerPosts,
 		},
-		revalidate: 60 * 5,
 	}
 }
 
@@ -75,7 +74,6 @@ export async function getStaticPaths() {
 	const paths = posts.map(post => ({
 		params: {
 			slug: post.slug,
-			revalidate: 60 * 10,
 		}
 	}));
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import ReactPaginate from 'react-paginate';
 import Footer from "../common/elements/footer/Footer";
 import Header from "../common/elements/header/Header";
@@ -10,6 +11,9 @@ import { sortingByDate } from "../common/utils";
 
 const PostListPage = ({ allPosts }) => {
 
+    const router = useRouter();
+    const search = router.query['busqueda'] || '';
+    allPosts = allPosts.filter(post => post.title.toLowerCase().includes(search.toLowerCase()));
     const [blogs] = useState(allPosts);
     const [pageNumber, setPageNumber] = useState(0);
 

@@ -871,6 +871,16 @@ Post List Style
     }
 }
 
+.no-search-container {
+    .no-search-button {
+        margin: 30px 0;
+        max-width: 250px;
+    }
+
+    @media #{$sm-layout} {
+        text-align: center;
+    }
+}
 // Featured Images 
 .featured-post {
     .content-block {

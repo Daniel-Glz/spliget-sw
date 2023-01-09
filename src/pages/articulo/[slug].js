@@ -4,7 +4,7 @@ import Footer from '../../common/elements/footer/Footer';
 import PostFormatVideo from '../../common/components/post/format/PostFormatVideo';
 import PostFormatGallery from '../../common/components/post/format/PostFormatGallery';
 import PostFormatAudio from '../../common/components/post/format/PostFormatAudio';
-import { getAllPosts, getPostBySlug, getPostsByCategory } from '../../../lib/api';
+import { getAllPosts, getPostBySlug } from '../../../lib/api';
 import { markdownToHtml } from '../../common/utils';
 
 const PostDetails = ({ post, footerPosts }) => {
@@ -22,7 +22,7 @@ const PostDetails = ({ post, footerPosts }) => {
 
 	return (
 		<>
-			<HeadTitle pageTitle={post.title} />
+			<HeadTitle pageTitle={post.title} pageDescription={post.metaDescription} />
 			<Header pClass="header-light header-sticky header-with-shadow"/>
 			<PostFormatHandler />
 			<Footer postsData={footerPosts}/>
@@ -37,7 +37,7 @@ export async function getStaticProps({ params }) {
 		'postFormat',
         'slug',
         'title',
-        'description',
+        'metaDescription',
 		'content',
         'date',
         'lastMod',

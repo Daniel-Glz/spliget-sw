@@ -5,15 +5,16 @@ import HeadTitle from "../../common/elements/head/HeadTitle";
 import Header from '../../common/elements/header/Header';
 import SidebarOne from "../../common/components/sidebar/SidebarOne";
 import { getPostsByCategory, getCategories, getAllPosts } from '../../../lib/api';
+import categories from '../../data/categories/categories.json';
 
 
-const PostCategory = ({ allPosts, footerPosts, categoryName }) => {
+const PostCategory = ({ allPosts, footerPosts, category }) => {
 
 	return (
 		<>
-			<HeadTitle pageTitle={`${categoryName} - Lista de articulos`} />
+			<HeadTitle pageTitle={`${category.label} - Lista de articulos`} pageDescription={category.metaDescription} />
 			<Header />
-			<BreadcrumbOne title={categoryName} />
+			<BreadcrumbOne title={category.label} />
 			<div className="axil-post-list-area axil-section-gap bg-color-white">
 				<div className="container">
 					<div className="row">
@@ -35,13 +36,11 @@ const PostCategory = ({ allPosts, footerPosts, categoryName }) => {
 export default PostCategory;
 
 export async function getStaticProps({ params }) {
-	const categoryName = params.slug;
-
-	const allPosts = getPostsByCategory(categoryName, [
+	const category = categories.find(category => category.dir === params.slug);
+	const allPosts = getPostsByCategory(category.dir, [
 		'postFormat',
         'slug',
         'title',
-        'description',
         'date',
         'lastMod',
         'featuredImage',
@@ -60,7 +59,7 @@ export async function getStaticProps({ params }) {
 		props: {
 			allPosts,
 			footerPosts,
-			categoryName: categoryName[0].toUpperCase() + categoryName.slice(1)
+			category: category
 		},
 		revalidate: 60 * 5
 	}
@@ -71,7 +70,7 @@ export async function getStaticPaths() {
 	const categories = getCategories();
 	const paths = categories.map(category => ({
 		params: {
-			slug: category
+			slug: category.dir
 		}
 	}))
 

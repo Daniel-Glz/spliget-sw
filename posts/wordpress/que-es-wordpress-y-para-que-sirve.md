@@ -1,7 +1,7 @@
 ---
 postFormat: 'standard'
 title: '¿Qué es WordPress y para qué sirve?'
-description: ''
+metaDescription: '¿Que es Wordpress y para que sirve? Wordpress es un sistema de gestion de contenido que ayuda a administrar el contenido de un sitio web.'
 date: 'Jan 6 2023'
 lastMod: 'Jan 6 2023'
 featuredImage: '/images/posts/wordpress-banner.png'

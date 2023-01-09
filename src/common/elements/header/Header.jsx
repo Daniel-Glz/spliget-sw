@@ -124,6 +124,7 @@ const Header = ({ isHome }) => {
                           type="text"
                           className="form-control"
                           placeholder="Buscar"
+                          name="busqueda"
                         />
                       </div>
                     </form>

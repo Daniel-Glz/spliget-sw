@@ -3,7 +3,6 @@ import Footer from "../common/elements/footer/Footer";
 import Header from "../common/elements/header/Header";
 import WidgetSearch from "../common/components/sidebar/WidgetSearch";
 import WidgetPostList from "../common/components/sidebar/WidgetPostList";
-import WidgetSocialShare from "../common/components/sidebar/WidgetSocialShare";
 import FormOne from "../common/components/form/FormOne";
 import HeadTitle from "../common/elements/head/HeadTitle";
 import { getAllPosts } from "../../lib/api";
@@ -39,7 +38,6 @@ const ContactUs = ({ allPosts }) => {
               <div className="sidebar-inner">
                 <WidgetSearch />
                 <WidgetPostList postData={allPosts} />
-                <WidgetSocialShare />
               </div>
             </div>
           </div>

@@ -4,7 +4,7 @@ import Footer from '../../common/elements/footer/Footer';
 import HeadTitle from "../../common/elements/head/HeadTitle";
 import Header from '../../common/elements/header/Header';
 import SidebarOne from "../../common/components/sidebar/SidebarOne";
-import { getPostsByCategory, getCategories, getAllPosts } from '../../../lib/api';
+import { getPostsByCategory, getAllPosts } from '../../../lib/api';
 import categories from '../../data/categories/categories.json';
 
 
@@ -37,7 +37,8 @@ export default PostCategory;
 
 export async function getStaticProps({ params }) {
 	const category = categories.find(category => category.dir === params.slug);
-	const allPosts = getPostsByCategory(category.dir, [
+
+	const allPosts = getPostsByCategory(category, [
 		'postFormat',
         'slug',
         'title',
@@ -67,7 +68,6 @@ export async function getStaticProps({ params }) {
 
 
 export async function getStaticPaths() {
-	const categories = getCategories();
 	const paths = categories.map(category => ({
 		params: {
 			slug: category.dir

@@ -76,7 +76,7 @@ const PostLayoutTwo = ({ dataPost, postStart, show, bgColor }) => {
           ))
           :
           <div className="no-search-container">
-            <h3>No hay articulos relacionados a esa busqueda</h3>
+            <h3>No se han encontrado articulos</h3>
             <Link href="/">
               <button className="axil-button button-rounded no-search-button">Reiniciar busqueda</button>
             </Link>

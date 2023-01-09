@@ -10,7 +10,6 @@ import { getAllPosts } from "../../lib/api";
 import { sortingByDate } from "../common/utils";
 
 const PostListPage = ({ allPosts }) => {
-
     const router = useRouter();
     const search = router.query['busqueda'] || '';
     allPosts = allPosts.filter(post => post.title.toLowerCase().includes(search.toLowerCase()));

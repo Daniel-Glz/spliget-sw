@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/legacy/image";
+import categories from "../../../../data/categories/categories.json";
+
 const PostLayoutTwo = ({ dataPost, postStart, show, bgColor }) => {
   return (
     <>
@@ -27,7 +29,7 @@ const PostLayoutTwo = ({ dataPost, postStart, show, bgColor }) => {
               <div className="post-content">
                 <div className="post-cat">
                   <div className="post-cat-list">
-                    <Link legacyBehavior href={`/categoria/${data.slug}`}>
+                    <Link legacyBehavior href={`/categoria/${categories.find((cateData) => cateData.label === data.category).dir}`}>
                       <a className="hover-flip-item-wrapper">
                         <span className="hover-flip-item">
                           <span data-text={data.category}>{data.category}</span>
@@ -53,15 +55,11 @@ const PostLayoutTwo = ({ dataPost, postStart, show, bgColor }) => {
                   <div className="post-meta">
                     <div className="content">
                       <div className="post-author-name h6">
-                        <Link legacyBehavior href={`/author/`}>
-                          <a className="hover-flip-item-wrapper">
-                            <span className="hover-flip-item">
-                              <span data-text={data.authorName}>
-                                {data.authorName}
-                              </span>
-                            </span>
-                          </a>
-                        </Link>
+                        <span className="hover-flip-item">
+                          <span data-text={data.authorName}>
+                            {data.authorName}
+                          </span>
+                        </span>
                       </div>
                       <ul className="post-meta-list">
                         <li>{data.date}</li>

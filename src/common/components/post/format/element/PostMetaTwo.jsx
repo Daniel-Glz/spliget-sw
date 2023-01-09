@@ -37,14 +37,9 @@ const PostMetaTwo = ({metaData}) => {
                       </div>
                       <div className="content">
                         <h6 className="post-author-name">
-                            <Link legacyBehavior href={`/author/author_name`}>
-                                <a
-                                    className="hover-flip-item-wrapper">
-                                    <span className="hover-flip-item">
-                                    <span data-text={metaData.authorName}>{metaData.authorName}</span>
-                                    </span>
-                                </a>
-                            </Link>
+                          <span className="hover-flip-item">
+                            <span data-text={metaData.authorName}>{metaData.authorName}</span>
+                          </span>
                         </h6>
                         <ul className="post-meta-list">
                           <li>{metaData.date}</li>

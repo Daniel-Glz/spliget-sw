@@ -61,7 +61,8 @@ export async function getStaticProps({ params }) {
 			allPosts,
 			footerPosts,
 			categoryName: categoryName[0].toUpperCase() + categoryName.slice(1)
-		}
+		},
+		revalidate: 60 * 5
 	}
 }
 

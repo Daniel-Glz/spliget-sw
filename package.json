@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export && next-export-optimize-images && next-sitemap",
+    "build": "next build && next-sitemap && next export && next-export-optimize-images",
     "export": "next export",
     "optimize-images": "next-export-optimize-images",
     "sitemap": "next-sitemap",

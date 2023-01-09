@@ -64,6 +64,7 @@ export async function getStaticProps({ params }) {
 			},
 			footerPosts,
 		},
+		revalidate: 60 * 5,
 	}
 }
 

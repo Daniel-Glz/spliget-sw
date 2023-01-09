@@ -103,6 +103,7 @@ const Header = ({ isHome }) => {
                         className="form-control"
                         placeholder="Buscar"
                         aria-label="Buscar"
+                        name="busqueda"
                       />
                     </div>
                   </form>
@@ -122,7 +123,7 @@ const Header = ({ isHome }) => {
                         <input
                           type="text"
                           className="form-control"
-                          placeholder="Search"
+                          placeholder="Buscar"
                         />
                       </div>
                     </form>

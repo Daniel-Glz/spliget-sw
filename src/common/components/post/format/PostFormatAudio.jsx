@@ -1,12 +1,22 @@
 import ReactAudioPlayer from 'react-audio-player';
+import ReactMarkdown from 'react-markdown';
 import SidebarTwo from "../../sidebar/SidebarTwo";
 import PostMetaTwo from "./element/PostMetaTwo";
+import Image from 'next/image';
 
 const PostFormatAudio = ({ postData }) => {
 
-    const basePathLink = process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_BASEPATH ?? "" : "";
-  
-  	const postContent = postData.content.replaceAll('/images/', basePathLink + '/images/');
+  const imgFormat = {
+    img: function ({ ...props }) {
+      const substrings = props.alt?.split('{{');
+      const alt = substrings[0].trim();
+
+      const width = substrings[1] ? substrings[1].match(/(?<=w:\s?)\d+/g)[0] : 810;
+      const height = substrings[1] ? substrings[1].match(/(?<=h:\s?)\d+/g)[0] : 425;
+
+      return <Image src={props.src} alt={alt} width={width} height={height} />;
+    },
+  }
 
   return (
     <>
@@ -25,10 +35,9 @@ const PostFormatAudio = ({ postData }) => {
                   />
                 ) : null
               }
-                <div
-                  className="post-details-content"
-                  dangerouslySetInnerHTML={{ __html: postContent }}
-                ></div>
+                <ReactMarkdown components={imgFormat}>
+                  {postData.content}
+                </ReactMarkdown>
               </div>
             </div>
             <div className="col-lg-4">

@@ -5,7 +5,6 @@ import PostFormatVideo from '../../common/components/post/format/PostFormatVideo
 import PostFormatGallery from '../../common/components/post/format/PostFormatGallery';
 import PostFormatAudio from '../../common/components/post/format/PostFormatAudio';
 import { getAllPosts, getPostBySlug } from '../../../lib/api';
-import { markdownToHtml } from '../../common/utils';
 
 const PostDetails = ({ post, footerPosts }) => {
 	
@@ -54,14 +53,9 @@ export async function getStaticProps({ params }) {
 		'category'
 	]);
 
-	const content = await markdownToHtml(post.content || '');
-
 	return {
 		props: {
-			post: {
-				...post,
-				content,
-			},
+			post,
 			footerPosts,
 		},
 	}

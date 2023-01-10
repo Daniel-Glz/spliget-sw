@@ -51,7 +51,6 @@ const Footer = ({postsData}) => {
               <div className="logo">
               <Link href="/">
                   <Image
-                    className="dark-logo"
                     src={`/images/logo/logo-spliget.png`}
                     alt="Spliget SW logo"
                     width={110}

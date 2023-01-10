@@ -51,11 +51,12 @@ const Header = ({ isHome }) => {
                     <div className="logo">
                         <Link href="/">
                                 <Image
-                                className="dark-logo"
                                 width={165}
                                 height={59.58}
                                 src={`/images/logo/logo-spliget.png`}
                                 alt="Spliget SW Logo"
+                                layout=""
+                                priority={true}
                                 />
                         </Link>
                         {

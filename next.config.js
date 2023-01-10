@@ -5,6 +5,7 @@ const nextConfig = {
   reactStrictMode: true,
   basePath: "",
   images: {
+   formats: ['image/avif', 'image/webp'],
    remotePatterns: [
       {
         protocol: 'http',

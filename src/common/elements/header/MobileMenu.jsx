@@ -16,7 +16,6 @@ const MobileMenu = ({menuShow, menuHide}) => {
             <div className="logo">
                 <Link href="/">
                         <Image
-                        className="dark-logo"
                         width={110}
                         height={40}
                         src={`/images/logo/logo-spliget.png`}

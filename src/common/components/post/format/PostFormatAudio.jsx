@@ -14,7 +14,7 @@ const PostFormatAudio = ({ postData }) => {
       const width = substrings[1] ? substrings[1].match(/(?<=w:\s?)\d+/g)[0] : 810;
       const height = substrings[1] ? substrings[1].match(/(?<=h:\s?)\d+/g)[0] : 425;
 
-      return <Image src={props.src} alt={alt} width={width} height={height} />;
+      return <Image src={props.src} alt={alt} width={width} height={height} quality={85} placeholder="blur" />;
     },
   }
 

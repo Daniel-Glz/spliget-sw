@@ -21,6 +21,9 @@ const PostLayoutTwo = ({ dataPost, postStart, show, bgColor }) => {
                       height={250}
                       width={295}
                       priority={index < 4}
+                      placeholder="blur"
+                      blurDataURL={data.featuredImage}
+                      quality={85}
                     />
                   </Link>
                 </div>

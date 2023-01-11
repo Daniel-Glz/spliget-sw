@@ -2,8 +2,12 @@
 postFormat: 'standard'
 title: '¿Qué es WordPress y para qué sirve?'
 metaDescription: '¿Que es Wordpress y para que sirve? Wordpress es un sistema de gestion de contenido que ayuda a administrar el contenido de un sitio web.'
-date: 'Jan 6 2023'
-lastMod: 'Jan 6 2023'
+alternativeHeadline: '¿Como instalar Wordpress?'
+dependencies: 'Conocimientos basicos de desarrollo web'
+proficiencyLevel: 'Principiante'
+keywords: 'Wordpress, CMS, Codigo abierto, Temas, Plugins'
+date: '2023/01/06'
+lastMod: '2023/01/11'
 featuredImage: '/images/posts/wordpress-banner.png'
 featuredImageAlt: 'Logo de Wordpress'
 authorName: 'Daniel Alexis Gonzalez Perez'
@@ -18,10 +22,6 @@ Wordpress es un sistema de gestion de contenidos o por sus siglas en ingles CMS 
 Algo importante a mencionar sobre Wordpress es que es un CMS de código abierto, que significa esto? Que cualquier persona tiene acceso a el de manera gratuita, tanto al sistema en si, como a todo el código fuente del software. Esto ha llevado a que se forme una gran comunidad la cual contribuye a dar mantenimiento, mejorar el sistema y crear complementos para este CMS tan popular.
 
 Si tu buscas ser parte de esta comunidad y aprender a usar Wordpress puedes empezar leyendo este articulo, que aqui te mostramos como conseguirlo.
-
-## ¿Como instalar Wordpress?
-
-Hay 2 formas de instalar Wordpress, instalándolo de manera local en tu PC o comprar un hosting en el cual lo alojes. La diferencia que tienen estos 2 es que la primera opción el sitio solo puede ser accedido por ti ya que no esta alojado en linea, esta manera se suele utilizar para tener un entorno de pruebas de tu sitio y llevar acabo la configuración previa que un sitio Wordpress requiere sin la necesidad de que los usuarios lo vean, por ejemplo: el instalar plugins, temas o personalizar el diseño del sitio, asi no gastas nada de dinero mientras el sitio web no esta listo para el publico en general.
 
 ### Ventajas de Wordpress
 
@@ -40,6 +40,10 @@ Hay 2 formas de instalar Wordpress, instalándolo de manera local en tu PC o com
     
 - **Estabilidad**:
     Al ser un CMS que desde sus inicios nunca ha dejado de evolucionar y se mantiene en constantes actualizaciones, puedes tener la seguridad de que tu sitio podrá durar tantos años como tu desees.
+
+## ¿Como instalar Wordpress?
+
+Hay 2 formas de instalar Wordpress, instalándolo de manera local en tu PC o comprar un hosting en el cual lo alojes. La diferencia que tienen estos 2 es que la primera opción el sitio solo puede ser accedido por ti ya que no esta alojado en linea, esta manera se suele utilizar para tener un entorno de pruebas de tu sitio y llevar acabo la configuración previa que un sitio Wordpress requiere sin la necesidad de que los usuarios lo vean, por ejemplo: el instalar plugins, temas o personalizar el diseño del sitio, asi no gastas nada de dinero mientras el sitio web no esta listo para el publico en general.
 
 ### Instalar Wordpress en local
 Para que puedas usar Wordpress de manera local es necesario que tengas instalado XAMPP este programa instala y administra por ti las dependencias básicas que un sitio Wordpress necesita para mantenerse activo como lo es: PHP, Apache y MySQL si deseas descargarlo su sitio oficial es el siguiente: [XAMPP](https://www.apachefriends.org/es/) . Una vez que tengas descargado e instalado XAMPP inicia los modulos de Apache y MySQL y descarga la ultima version de Wordpress que se encuentra disponible en [Wordpress](https://Wordpress.org).

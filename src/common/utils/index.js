@@ -44,6 +44,36 @@ const markdownToHtml = async (markdown) => {
   return result.toString()
 }
 
+const generateArticleJsonLd = (post) => {
+  const body = post.content;
+  const wordCount = body.split(/\s/g).length;
+  const imagePathname = post.featuredImage.split('/').pop();
+  const imageName = imagePathname.split('.').shift();
+
+  return {
+    __html: `{
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "${post.title}",
+      "dependencies": "${post.dependencies || ''}",
+      "proficiencyLevel": "${post.proficiencyLevel || ''}",
+      "alternativeHeadline": "${post.alternativeHeadline || post.title}",
+      "image": "https://www.spligetsw.com/_next/static/chunks/images/images/posts/${imageName}_640_85.webp",
+      "author": "${post.authorName}",
+      "editor": "${post.authorName},
+      "genre": "${post.category}",
+      "keywords" "${post.keywords || ''}",
+      "datePublished": "${post.date}",
+      "dateModified": "${post.lastMod}",
+      "description": "${post.metaDescription}",
+      "wordCount": "${wordCount}",
+      "articleBody": "${body}",
+      "publisher": "Spliget SW",
+      "url": "${process.env.SITE_UR || "https://www.spligetsw.com/"}${post.slug}",
+    }`
+  }
+}
+
 const HoverActiveClass = (hoverRef) => {
 	const [refLists, setrefLists] = useState([]);
 	
@@ -78,4 +108,4 @@ const orderPostsByCategory = (posts, categories) => {
   return data;
 }
 
-export { slugify, removeDuplicates, sortingByDate, HoverActiveClass, markdownToHtml, orderPostsByCategory};
+export { slugify, removeDuplicates, sortingByDate, HoverActiveClass, markdownToHtml, orderPostsByCategory, generateArticleJsonLd};

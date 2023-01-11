@@ -23,7 +23,7 @@ const PostFormatAudio = ({ postData }) => {
       <div className="post-single-wrapper axil-section-gap bg-color-white">
         <div className="container">
           <div className="row">
-            <div className="col-lg-8">
+            <main className="col-lg-8">
               <PostMetaTwo metaData={postData} />
               <div className="axil-post-details">
               {
@@ -39,7 +39,7 @@ const PostFormatAudio = ({ postData }) => {
                   {postData.content}
                 </ReactMarkdown>
               </div>
-            </div>
+            </main>
             <div className="col-lg-4">
               <SidebarTwo />
             </div>

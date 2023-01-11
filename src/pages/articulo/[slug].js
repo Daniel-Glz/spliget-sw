@@ -5,6 +5,7 @@ import PostFormatVideo from '../../common/components/post/format/PostFormatVideo
 import PostFormatGallery from '../../common/components/post/format/PostFormatGallery';
 import PostFormatAudio from '../../common/components/post/format/PostFormatAudio';
 import { getAllPosts, getPostBySlug } from '../../../lib/api';
+import { generateArticleJsonLd } from '../../common/utils';
 
 const PostDetails = ({ post, footerPosts }) => {
 	
@@ -19,9 +20,11 @@ const PostDetails = ({ post, footerPosts }) => {
 		}
 	}
 
+	const jsonLD = generateArticleJsonLd(post);
+
 	return (
 		<>
-			<HeadTitle pageTitle={post.title} pageDescription={post.metaDescription} />
+			<HeadTitle pageTitle={post.title} pageDescription={post.metaDescription} jsonLD={jsonLD} />
 			<Header pClass="header-light header-sticky header-with-shadow"/>
 			<PostFormatHandler />
 			<Footer postsData={footerPosts}/>
@@ -36,6 +39,7 @@ export async function getStaticProps({ params }) {
 		'postFormat',
         'slug',
         'title',
+		'alternativeHeadline',
         'metaDescription',
 		'content',
         'date',
@@ -45,6 +49,9 @@ export async function getStaticProps({ params }) {
         'authorName',
         'authorImage',
         'category',
+		'keywords',
+		'dependencies',
+		'proficiencyLevel',
 	]);
 	
 	const footerPosts = getAllPosts([

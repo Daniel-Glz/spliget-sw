@@ -14,7 +14,7 @@ const nextConfig = {
    ]
   },
   env: {
-    SITE_URL: process.env.NODE_ENV === 'production' ? 'https://spligetsw.com' : 'http://localhost:3000',
+    SITE_URL: process.env.NODE_ENV === 'production' ? 'https://www.spligetsw.com' : 'http://localhost:3000',
   }
 }
 

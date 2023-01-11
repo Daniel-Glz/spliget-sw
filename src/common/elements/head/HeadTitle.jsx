@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-const HeadTitle = ({pageTitle, pageDescription}) => {
+const HeadTitle = ({pageTitle, pageDescription, jsonLD}) => {
     return ( 
         <Head>
             <meta charSet="utf-8" />
@@ -9,6 +9,11 @@ const HeadTitle = ({pageTitle, pageDescription}) => {
             <meta name="description" content={pageDescription ? pageDescription : "Explora el mundo del software con nosotros. Publicaciones detalladas y actualizadas sobre Wordpress, NextJS y JavaScript."} />
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
             <meta name="robots" content="noodp" />
+            {
+                jsonLD && (
+                    <script type="application/ld+json" dangerouslySetInnerHTML={jsonLD} key="article-jsonld" />
+                )
+            }
         </Head>
      );
 }

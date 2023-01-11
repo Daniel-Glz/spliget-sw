@@ -90,8 +90,16 @@ blockquote {
     }
     p {
         a {
-            color: var(--color-primary);
+            color: var(--color-primary) !important;
+            font-weight: 800;
+            
+            &:hover {
+                color: var(--color-secondary) !important;
+            }
         }
+    }
+    li {
+        margin: 25px 0;
     }
     .tagcloud {
         margin-bottom: 40px;

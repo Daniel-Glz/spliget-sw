@@ -13,22 +13,18 @@ const ContactUs = ({ allPosts }) => {
     <>
       <HeadTitle pageTitle="Contacto - Spliget SW" pageDescription="¿Tienes alguna pregunta o sugerencia para nosotros? ¡No dudes en ponerte en contacto! En esta página encontrarás nuestros datos de contacto, incluyendo nuestro número de teléfono y correo electrónico, así como un formulario de contacto para que puedas enviarnos tu mensaje de manera rápida y sencilla. ¡Estamos deseando escuchar de ti!"/>
       <Header pClass="header-light header-sticky header-with-shadow" />
-      <BreadcrumbTwo
-        title="Contactanos"
-        paragraph="Wherever &amp; whenever you need us. We are here for you – contact us for all your support needs.<br /> be it technical, general queries or information support."
-        bgImae="url('images/bg/bg-image-3.webp')"
-      />
       <div className="axil-post-list-area axil-section-gap bg-color-white">
         <div className="container">
           <div className="row">
             <div className="col-lg-8 col-xl-8">
               {/* Start About Area  */}
+              <h1>Contacto</h1>
               <div className="axil-about-us">
                 <div className="inner">
-                  <h2>Say Hello! </h2>
-                  <p>Donec cursus dolor vitae congue consectetur. Morbi mattis viverra felis. Etiam dapibus id turpis at sagittis. Cras mollis mi vel ante ultricies, id ullamcorper mi pulvinar. Proin bibendum ornare risus, lacinia cursus quam condimentum id. Curabitur auctor massa eget porttitor molestie. Aliquam imperdiet dolor nec metus pulvinar sollicitudin. </p>
-                  <p><strong>Aliquam iaculis at odio ut tempus</strong>. Suspendisse blandit luctus dui, a consequat mauris mollis id. Sed in ante at tortor malesuada imperdiet. Vestibulum sed gravida nibh. Nulla suscipit congue lorem, id tempor ipsum molestie sit amet. Nulla ultricies vitae erat in tincidunt. Maecenas tempus quam et ipsum elementum, a efficitur lectus tincidunt. Praesent diam elit, tincidunt ac tempus vulputate, aliquet viverra mauris. Etiam eu nunc efficitur, sagittis est ut, fringilla neque. Ut interdum eget lorem eget congue. Ut nec arcu placerat, mattis urna vel, consequat diam. Sed in leo in dolor suscipit molestie. </p>
-                  <p className="primary-color">Email: <a href="mailto:mepress@gmail.com">mepress@gmail.com</a></p>
+                  <p>Hola! Bienvenido a la página de contacto de Spliget SW. Nos especializamos en proporcionar tutoriales detallados y respuestas a preguntas comunes sobre Javascript, Next.js y WordPress. Nuestra finalidad es ayudar a nuestros lectores a mejorar sus habilidades y resolver problemas en estas áreas de tecnología. </p>
+                  <p>Si también desea colaborar con nosotros, proponer un tutorial o compartir sus conocimientos, estaremos encantados de escucharlo.</p>
+                  <p>Gracias por visitar nuestra página y por considerar Spliget Sw como una fuente confiable de tutoriales sobre Javascript, Next.js y WordPress. ¡Esperamos seguir siendo de su interés!</p>
+                  <p>Email: <a href="mailto:spliget.software@gmail.com">spliget.software@gmail.com</a></p>
                 </div>
                 <FormOne />
               </div>

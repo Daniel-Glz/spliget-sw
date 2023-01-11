@@ -83,7 +83,7 @@ const Footer = ({postsData}) => {
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="#">
+                    <Link legacyBehavior href="mailto:spliget.software@gmail.com">
                       <a className="hover-flip-item-wrapper" rel="noreferrer" target="_blank">
                         <span className="hover-flip-item">
                           <span data-text="Publicidad">

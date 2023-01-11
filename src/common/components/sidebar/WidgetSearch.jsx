@@ -2,7 +2,7 @@ const WidgetSearch = () => {
   return (
     <div className="axil-single-widget widget widget_search mb--30">
       <div className="widget-title h5">Buscar articulos</div>
-      <form action="#">
+      <form action="/">
         <div className="axil-search form-group">
           <button type="submit" className="search-button" title="Boton de busqueda">
             <svg enableBackground="new 0 0 129 129" version="1.1" viewBox="0 0 129 129" xmlns="http://www.w3.org/2000/svg">

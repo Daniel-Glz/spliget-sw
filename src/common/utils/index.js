@@ -42,7 +42,8 @@ const sortingByDate = (posts) => {
 const generateArticleJsonLd = (post) => {
   const removedImages = post.content.replace(/\s*\[.*?\]\s*/g, '');
   const removedAltText = removedImages.replace(/\s*!\(.*?\)\s*/g, '');
-  const body = escape(markdownToTxt(removedAltText));
+  const removedSpaces = removedAltText.replace(/\s+/g,' ').trim();
+  const body = escape(markdownToTxt(removedSpaces));
   const wordCount = body.split(/\s/g).length;
   const imagePathname = post.featuredImage.split('/').pop();
   const imageName = imagePathname.split('.').shift();

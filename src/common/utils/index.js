@@ -57,14 +57,14 @@ const generateArticleJsonLd = (post) => {
       "author": "${post.authorName}",
       "editor": "${post.authorName}",
       "genre": "${post.category}",
-      "keywords" "${post.keywords || ''}",
+      "keywords": "${post.keywords || ''}",
       "datePublished": "${post.date}",
       "dateModified": "${post.lastMod}",
       "description": "${post.metaDescription}",
       "wordCount": "${wordCount}",
       "articleBody": "${body}",
       "publisher": "Spliget SW",
-      "url": "${process.env.SITE_URL || "https://www.spligetsw.com/"}${post.slug}",
+      "url": "${process.env.SITE_URL || "https://www.spligetsw.com/"}${post.slug}"
     }`
   }
 }

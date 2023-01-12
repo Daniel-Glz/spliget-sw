@@ -40,11 +40,12 @@ const sortingByDate = (posts) => {
 }
 
 const generateArticleJsonLd = (post) => {
+  //stringify all post properties
   const body = JSON.stringify(markdownToTxt(escape(post.content)));
   const wordCount = body.split(/\s/g).length;
   const imagePathname = post.featuredImage.split('/').pop();
   const imageName = imagePathname.split('.').shift();
-
+  
   return {
     __html: `{
       "@context": "https://schema.org",
@@ -62,7 +63,7 @@ const generateArticleJsonLd = (post) => {
       "dateModified": "${post.lastMod}",
       "description": "${post.metaDescription}",
       "wordCount": "${wordCount}",
-      "articleBody": "${body}",
+      "articleBody": ${body},
       "publisher": "Spliget SW",
       "url": "${process.env.SITE_URL || "https://www.spligetsw.com/"}${post.slug}"
     }`

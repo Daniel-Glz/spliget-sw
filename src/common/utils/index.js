@@ -40,10 +40,7 @@ const sortingByDate = (posts) => {
 }
 
 const generateArticleJsonLd = (post) => {
-  const removedImages = post.content.replace(/\s*\[.*?\]\s*/g, '');
-  const removedAltText = removedImages.replace(/\s*!\(.*?\)\s*/g, '');
-  const removedSpaces = removedAltText.replace(/\s+/g,' ').trim();
-  const body = escape(markdownToTxt(removedSpaces));
+  const body = JSON.stringify(markdownToTxt(escape(post.content)));
   const wordCount = body.split(/\s/g).length;
   const imagePathname = post.featuredImage.split('/').pop();
   const imageName = imagePathname.split('.').shift();
@@ -73,12 +70,9 @@ const generateArticleJsonLd = (post) => {
 }
 
 function escape(htmlStr) {
-  return htmlStr.replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#39;");        
-
+  return htmlStr.replace(/\s*\[.*?\]\s*/g, '')
+        .replace(/\s*!\(.*?\)\s*/g, '')
+        .replace(/\s+/g,' ').trim()
 }
 
 const HoverActiveClass = (hoverRef) => {

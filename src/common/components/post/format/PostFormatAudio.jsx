@@ -25,7 +25,7 @@ const PostFormatAudio = ({ postData }) => {
           <div className="row">
             <main className="col-lg-8">
               <PostMetaTwo metaData={postData} />
-              <div className="axil-post-details">
+              <div className="axil-post-details mb_sm--40">
               {
                 postData.audio ? (
                   <ReactAudioPlayer

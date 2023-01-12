@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { DateTime } from 'luxon';
-import { remark } from 'remark'
-import html from 'remark-html'
+import { markdownToTxt } from 'markdown-to-txt';
+
 
 const slugify = (text) => {
     return text
@@ -39,13 +39,8 @@ const sortingByDate = (posts) => {
 })
 }
 
-const markdownToHtml = async (markdown) => {
-  const result = await remark().use(html).process(markdown)
-  return result.toString()
-}
-
 const generateArticleJsonLd = (post) => {
-  const body = post.content;
+  const body = markdownToTxt(post.content);
   const wordCount = body.split(/\s/g).length;
   const imagePathname = post.featuredImage.split('/').pop();
   const imageName = imagePathname.split('.').shift();
@@ -69,7 +64,7 @@ const generateArticleJsonLd = (post) => {
       "wordCount": "${wordCount}",
       "articleBody": "${body}",
       "publisher": "Spliget SW",
-      "url": "${process.env.SITE_UR || "https://www.spligetsw.com/"}${post.slug}",
+      "url": "${process.env.SITE_URL || "https://www.spligetsw.com/"}${post.slug}",
     }`
   }
 }
@@ -108,4 +103,4 @@ const orderPostsByCategory = (posts, categories) => {
   return data;
 }
 
-export { slugify, removeDuplicates, sortingByDate, HoverActiveClass, markdownToHtml, orderPostsByCategory, generateArticleJsonLd};
+export { slugify, removeDuplicates, sortingByDate, HoverActiveClass, orderPostsByCategory, generateArticleJsonLd};

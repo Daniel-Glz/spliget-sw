@@ -40,7 +40,7 @@ const sortingByDate = (posts) => {
 }
 
 const generateArticleJsonLd = (post) => {
-  const body = markdownToTxt(post.content);
+  const body = escape(markdownToTxt(post.content));
   const wordCount = body.split(/\s/g).length;
   const imagePathname = post.featuredImage.split('/').pop();
   const imageName = imagePathname.split('.').shift();
@@ -67,6 +67,15 @@ const generateArticleJsonLd = (post) => {
       "url": "${process.env.SITE_URL || "https://www.spligetsw.com/"}${post.slug}"
     }`
   }
+}
+
+function escape(htmlStr) {
+  return htmlStr.replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");        
+
 }
 
 const HoverActiveClass = (hoverRef) => {

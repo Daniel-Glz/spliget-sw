@@ -55,7 +55,7 @@ const generateArticleJsonLd = (post) => {
       "alternativeHeadline": "${post.alternativeHeadline || post.title}",
       "image": "https://www.spligetsw.com/_next/static/chunks/images/images/posts/${imageName}_640_85.webp",
       "author": "${post.authorName}",
-      "editor": "${post.authorName},
+      "editor": "${post.authorName}",
       "genre": "${post.category}",
       "keywords" "${post.keywords || ''}",
       "datePublished": "${post.date}",

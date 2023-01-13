@@ -14,7 +14,6 @@ authorName: 'Daniel Alexis Gonzalez Perez'
 authorImage: 'https://avatars.githubusercontent.com/u/54653600?v=4'
 
 ---
-![Wordpress logo](/images/posts/wordpress-banner.png)
 ## ¿Que es Wordpress?
 
 Wordpress es un sistema de gestion de contenidos o por sus siglas en ingles CMS (Content Management System) el cual ayuda a la creación y mantenimiento de sitios web como lo son  blogs, foros, Ecommerces o cualquier tipo de sitio que busque publicar contenido de forma sencilla en la web. Este fue creado en 2003 y desde entonces ha crecido hasta el punto de ser el sistema de gestion de contenidos mas popular en la creacion y mantenimiento de sitios web (Mas de 60 millones de sitios web usan Wordpress).
@@ -46,9 +45,9 @@ Si tu buscas ser parte de esta comunidad y aprender a usar Wordpress puedes empe
 Hay 2 formas de instalar Wordpress, instalándolo de manera local en tu PC o comprar un hosting en el cual lo alojes. La diferencia que tienen estos 2 es que la primera opción el sitio solo puede ser accedido por ti ya que no esta alojado en linea, esta manera se suele utilizar para tener un entorno de pruebas de tu sitio y llevar acabo la configuración previa que un sitio Wordpress requiere sin la necesidad de que los usuarios lo vean, por ejemplo: el instalar plugins, temas o personalizar el diseño del sitio, asi no gastas nada de dinero mientras el sitio web no esta listo para el publico en general.
 
 ### Instalar Wordpress en local
-Para que puedas usar Wordpress de manera local es necesario que tengas instalado XAMPP este programa instala y administra por ti las dependencias básicas que un sitio Wordpress necesita para mantenerse activo como lo es: PHP, Apache y MySQL si deseas descargarlo su sitio oficial es el siguiente: [XAMPP](https://www.apachefriends.org/es/) . Una vez que tengas descargado e instalado XAMPP inicia los modulos de Apache y MySQL y descarga la ultima version de Wordpress que se encuentra disponible en [Wordpress](https://Wordpress.org).
+Para que puedas usar Wordpress de manera local es necesario que tengas instalado XAMPP este programa instala y administra por ti las dependencias básicas que un sitio Wordpress necesita para mantenerse activo como lo es: PHP, Apache y MySQL si deseas descargarlo su sitio oficial es el siguiente: [XAMPP](https://www.apachefriends.org/es/). 
 
-Descomprime el archivo que acabas de descargar y copia todos los archivos en la carpeta "htdocs" que se encuentra en la carpeta de XAMPP en tu computadora. Por ejemplo, si has instalado XAMPP en el disco local C, la carpeta "htdocs" se encontrará en la siguiente ruta: C:\xampp\htdocs una vez que hayas hecho esto abre tu navegador y escribe la siguiente URL en la barra de direcciones: `http://localhost/nombre-de-la-carpeta-de-wordpress` . Si seguiste los pasos de manera correcta wordpress ya estara instalado en tu computadora.
+Una vez que tengas descargado e instalado XAMPP inicia los modulos de Apache y MySQL y descarga la ultima version de Wordpress que se encuentra disponible en [Wordpress](https://Wordpress.org). Descomprime el archivo que acabas de descargar y copia todos los archivos en la carpeta "htdocs" que se encuentra en la carpeta de XAMPP en tu computadora. Por ejemplo, si has instalado XAMPP en el disco local C, la carpeta "htdocs" se encontrará en la siguiente ruta: C:\xampp\htdocs una vez que hayas hecho esto abre tu navegador y escribe la siguiente URL en la barra de direcciones: `http://localhost/nombre-de-la-carpeta-de-wordpress` . Si seguiste los pasos de manera correcta wordpress ya estara instalado en tu computadora.
 
 
 

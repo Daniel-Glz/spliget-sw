@@ -30,41 +30,41 @@ En Wordpress, la gestion de contenido es realizada mediante una interfaz amigabl
 
 Como puedes ver en la imagen anterior, tenemos muchas opciones en el menu lateral izquierdo, pero para empezar a usar Wordpress solo necesitamos conocer 3 de ellas:
 
-- **Paginas**:
+- **Paginas:**
     En esta seccion es donde podemos crear nuevas paginas para nuestro sitio web, asi como editarlas o eliminarlas. Por ejemplo si quieres crear una pagina de contacto para tu sitio, nos dirigimos a esta seccion y elegimos la opcion de agregar nueva pagina. Cuando lo hagamos aparecera una pantalla como la siguiente:
 
     ![Agregar nueva pagina Wordpress](/images/posts/agregar-nueva-pagina-wordpress.png)
 
     En esta pantalla podemos agregar el contenido de nuestra nueva pagina, como el titulo, texto o imagenes que queremos mostrar. Al terminar, solo nos queda darle a publicar y nuestra nueva pagina ya estara disponible en nuestro sitio web.
 
-- **Entradas**:
+- **Entradas:**
     En esta seccion es donde podemos crear nuevos articulos para nuestro sitio web. Por ejemplo si queremos crear un nuevo articulo para nuestro blog, es tan facil como seguir los mismos pasos que en la seccion de paginas, nos dirigimos a esta seccion y elegimos la opcion de agregar nueva entrada y nos aparecera la siguiente pantalla:
 
     ![Agregar nueva entrada Wordpress](/images/posts/agregar-nueva-entrada-wordpress.png)
 
     Una vez que hayamos terminado de escribir nuestro articulo, lo publicamos y Wordpress lo agregara a nuestro sitio, dandole su propia pagina asi como su propia URL.
 
-- **Apariencia**:
+- **Apariencia:**
     En esta seccion es donde podemos personalizar el aspecto de nuestro sitio web, como por ejemplo cambiar el tema que esta usando actualmente. Es tan facil como buscar un tema que nos guste y darle a instalar, Luego de esto nuestro sitio web tendra un nuevo aspecto.
 
     ![Pantalla de temas de Wordpress](/images/posts/apariencia-wordpress.png)
 
 ### Ventajas de Wordpress
 
-- **Código abierto**:
+- **Código abierto:**
     Como mencionábamos al principio de este articulo el que un CMS sea código abierto trae muchas ventajas, por ejemplo la gran comunidad que lo respalda. Dia con dia personas contribuyen a Wordpress creando nuevos complementos o temas, dando solución a bugs que se presentan o mejorando el sistema para mantenerlo actualizado.
 
 
-- **Temas para personalizar tu contenido**:
+- **Temas para personalizar tu contenido:**
     Un obstaculo al que se pueden enfrentar las personas que buscan crear un sitio web es el crear un diseño web ideal, agradable a la vista y que vaya de acuerdo al estilo que tienen pensado para su blog, foro o sitio web de su empresa. Con Wordpress este problema desaparece, ya que debido a su popularidad y su gran comunidad hay miles de diseños geniales totalmente gratis de los cuales puedes elegir para usarlos en tu sitio de forma casi instantanea.
     
-- **Facilidad para administrar contenido**:
+- **Facilidad para administrar contenido:**
     La principal ventaja que trae consigo Wordpress es la facilidad con la que manejas el contenido de tu sitio web. Esta lleno de herramientas que automatizan las tareas difíciles que conlleva el administrar un sitio web como lo es la parte del SEO, la seguridad y la administración de tus nuevas secciones o artículos en tu sitio web.
     
-- **Es gratuito**:
+- **Es gratuito:**
     Al ser un software de código abierto cualquier persona tiene acceso a el sin pagar ni un solo centavo por usarlo, eso si algunos complementos o temas creados por la comunidad pueden ser de paga.
     
-- **Estabilidad**:
+- **Estabilidad:**
     Al ser un CMS que desde sus inicios nunca ha dejado de evolucionar y se mantiene en constantes actualizaciones, puedes tener la seguridad de que tu sitio podrá durar tantos años como tu desees.
 
 ## ¿Como instalar Wordpress?

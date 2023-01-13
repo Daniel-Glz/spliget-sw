@@ -89,6 +89,9 @@ blockquote {
         margin-bottom: 60px;
     }
     p {
+        strong {
+            display: block;
+        }
         a {
             color: var(--color-primary) !important;
             font-weight: 800;

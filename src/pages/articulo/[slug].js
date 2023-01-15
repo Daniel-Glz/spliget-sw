@@ -6,9 +6,14 @@ import PostFormatGallery from '../../common/components/post/format/PostFormatGal
 import PostFormatAudio from '../../common/components/post/format/PostFormatAudio';
 import { getAllPosts, getPostBySlug } from '../../../lib/api';
 import { generateArticleJsonLd } from '../../common/utils';
+import hljs from 'highlight.js';
+import { useEffect } from 'react';
 
 const PostDetails = ({ post, footerPosts }) => {
 	
+	useEffect(() => {
+		hljs.initHighlightingOnLoad();
+	}, []);
 	const PostFormatHandler = () => {
 		switch (post.format) {
 			case 'video':

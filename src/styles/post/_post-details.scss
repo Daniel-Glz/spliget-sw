@@ -1,6 +1,7 @@
 /*--------------------------
     Post Details Styles  
 --------------------------*/
+@import 'highlight/dracula';
 
 figure {
     margin-bottom: 60px;
@@ -51,9 +52,6 @@ blockquote {
     &.alignwide {
         margin-left: -105px;
         margin-right: -105px;
-        img {
-           
-        }
     }
 }
 
@@ -93,8 +91,9 @@ blockquote {
             display: block;
         }
         a {
-            color: var(--color-primary) !important;
-            font-weight: 800;
+            font-weight: 600;
+            padding: 5px;
+            background-color: var(--color-primary);
             
             &:hover {
                 color: var(--color-secondary) !important;

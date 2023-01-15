@@ -4,6 +4,7 @@ import SidebarTwo from "../../sidebar/SidebarTwo";
 import PostMetaTwo from "./element/PostMetaTwo";
 import Image from 'next/image';
 import WidgetTOC from '../../sidebar/WidgetTOC';
+
 import { slugify } from '../../../utils';
 
 const PostFormatAudio = ({ postData }) => {
@@ -15,7 +16,7 @@ const PostFormatAudio = ({ postData }) => {
       const width = substrings[1] ? substrings[1].match(/(?<=w:\s?)\d+/g)[0] : 810;
       const height = substrings[1] ? substrings[1].match(/(?<=h:\s?)\d+/g)[0] : 425;
 
-      return <Image src={props.src} alt={alt} width={width} height={height} quality={85} placeholder="blur" blurDataURL={props.src} />;
+      return <Image src={props.src} alt={alt} width={width} height={height} quality={85} placeholder="blur" />;
     },
     h2: ({ ...props }) => (<h2 id={slugify(props.children[0])}>{props.children}</h2>),
     h3: ({ ...props }) => (<h3 id={slugify(props.children[0])}>{props.children}</h3>),

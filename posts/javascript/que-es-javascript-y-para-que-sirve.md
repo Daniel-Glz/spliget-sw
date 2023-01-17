@@ -1,7 +1,7 @@
 ---
 postFormat: 'standard'
 title: '¿Qué es Javascript y para qué sirve?'
-metaDescription: '¿Que es javascript y para que sirve?'
+metaDescription: 'Javascript es un lenguaje de programacion de alto nivel disenado para crear paginas web dinamicas y aplicaciones web. A diferencia de otros lenguajes de programacion, este no fue disenado para ser un lenguaje compilado, sino para ser interpretado por nuestros navegadores web.'
 alternativeHeadline: '¿Para que sirve javascript?'
 dependencies: 'Conocimientos basicos de desarrollo web'
 proficiencyLevel: 'Principiante'

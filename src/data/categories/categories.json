@@ -5,9 +5,9 @@
         "metaDescription": "En esta categoría encontrarás todo lo que necesitas para dominar WordPress, el CMS más popular del mundo. Aprende a crear y personalizar tu sitio web con nuestros tutoriales paso a paso, descubre los mejores plugins y temas, y consigue consejos y trucos para aprovechar al máximo tu plataforma WordPress."
     },
     {
-        "label": "Next.js",
-        "dir": "nextjs",
-        "metaDescription": "En esta categoría encontrarás todo lo que necesitas para dominar Next.js, el marco de aplicaciones web basado en React. Aprende a crear y optimizar tu sitio web o aplicación, descubre las mejores prácticas y consejos para sacar el máximo provecho de Next.js, y consigue recursos y herramientas para hacer tu proyecto aún mejor."
+        "label": "CSS",
+        "dir": "css",
+        "metaDescription": "En esta categoría encontrarás todo lo que necesitas para dominar CSS. Aprende a crear y optimizar tu sitio web o aplicación, descubre las mejores prácticas y consejos para sacar el máximo provecho de CSS, y consigue recursos y herramientas para hacer tu proyecto aún mejor."
     },
     {
         "label": "Javascript",

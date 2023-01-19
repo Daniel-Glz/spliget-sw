@@ -5,7 +5,6 @@ import PostFormatVideo from '../../common/components/post/format/PostFormatVideo
 import PostFormatGallery from '../../common/components/post/format/PostFormatGallery';
 import PostFormatAudio from '../../common/components/post/format/PostFormatAudio';
 import { getAllPosts, getPostBySlug } from '../../../lib/api';
-import { generateArticleJsonLd } from '../../common/utils';
 import hljs from 'highlight.js';
 import { useEffect } from 'react';
 
@@ -14,6 +13,7 @@ const PostDetails = ({ post, footerPosts }) => {
 	useEffect(() => {
 		hljs.initHighlightingOnLoad();
 	}, []);
+
 	const PostFormatHandler = () => {
 		switch (post.format) {
 			case 'video':
@@ -25,11 +25,9 @@ const PostDetails = ({ post, footerPosts }) => {
 		}
 	}
 
-	const jsonLD = generateArticleJsonLd(post);
-
 	return (
 		<>
-			<HeadTitle pageTitle={post.title} pageDescription={post.metaDescription} jsonLD={jsonLD} />
+			<HeadTitle pageTitle={post.title} pageDescription={post.metaDescription} articleData={post} />
 			<Header pClass="header-light header-sticky header-with-shadow"/>
 			<PostFormatHandler />
 			<Footer postsData={footerPosts}/>

@@ -21,8 +21,8 @@ const Nav = () => {
                 </Link>
             </li>
             <li className="menu-item-has-children">
-                <Link href="/categoria/nextjs">
-                    Next.js
+                <Link href="/categoria/css">
+                    CSS
                 </Link>
             </li>
         </ul>

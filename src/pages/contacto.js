@@ -11,7 +11,7 @@ import { sortingByDate } from "../common/utils";
 const ContactUs = ({ allPosts }) => {
   return (
     <>
-      <HeadTitle pageTitle="Contacto - Spliget SW" pageDescription="¿Tienes alguna pregunta o sugerencia para nosotros? ¡No dudes en ponerte en contacto! En esta página encontrarás nuestros datos de contacto, incluyendo nuestro número de teléfono y correo electrónico, así como un formulario de contacto para que puedas enviarnos tu mensaje de manera rápida y sencilla. ¡Estamos deseando escuchar de ti!"/>
+      <HeadTitle pageTitle="Spliget SW - Contacto" pageDescription="¿Tienes alguna pregunta o sugerencia para nosotros? ¡No dudes en ponerte en contacto! En esta página encontrarás nuestros datos de contacto, incluyendo nuestro número de teléfono y correo electrónico, así como un formulario de contacto para que puedas enviarnos tu mensaje de manera rápida y sencilla. ¡Estamos deseando escuchar de ti!"/>
       <Header pClass="header-light header-sticky header-with-shadow" />
       <div className="axil-post-list-area axil-section-gap bg-color-white">
         <div className="container">

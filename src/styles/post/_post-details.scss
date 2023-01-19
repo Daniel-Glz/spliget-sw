@@ -102,6 +102,9 @@ blockquote {
     }
     li {
         margin: 25px 0;
+        &::marker {
+            color: var(--color-primary);
+        }
     }
     .tagcloud {
         margin-bottom: 40px;

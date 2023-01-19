@@ -1,11 +1,16 @@
 import Head from "next/head";
+import { generateArticleJsonLd } from "../../utils";
 
-const HeadTitle = ({pageTitle, pageDescription, jsonLD}) => {
+const HeadTitle = ({pageTitle, pageDescription, articleData}) => {
+
+    const jsonLD = articleData ? generateArticleJsonLd(articleData) : null;
+
     return ( 
         <Head>
             <meta charSet="utf-8" />
             <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
             <title>{pageTitle ? pageTitle : "Spliget SW - Publicaciones de software"}</title>
+            <meta name="robots" content="NOODP" />
             <meta name="description" content={pageDescription ? pageDescription : "Explora el mundo del software con nosotros. Publicaciones detalladas y actualizadas sobre Wordpress, NextJS y JavaScript."} />
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
             {

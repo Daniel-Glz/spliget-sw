@@ -11,7 +11,7 @@ const HeadTitle = ({pageTitle, pageDescription, articleData}) => {
             <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
             <title>{pageTitle ? pageTitle : "Spliget SW - Publicaciones de software"}</title>
             <meta name="robots" content="NOODP" />
-            <meta name="description" content={pageDescription ? pageDescription : "Explora el mundo del software con nosotros. Publicaciones detalladas y actualizadas sobre Wordpress, NextJS y JavaScript."} />
+            <meta name="description" content={pageDescription ? pageDescription : "Explora el mundo del software con nosotros. Publicaciones detalladas y actualizadas sobre Wordpress, CSS y JavaScript."} />
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
             {
                 jsonLD && (

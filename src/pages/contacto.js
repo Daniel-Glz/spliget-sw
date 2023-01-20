@@ -1,4 +1,3 @@
-import BreadcrumbTwo from "../common/elements/breadcrumb/breadcrumbTwo";
 import Footer from "../common/elements/footer/Footer";
 import Header from "../common/elements/header/Header";
 import WidgetSearch from "../common/components/sidebar/WidgetSearch";

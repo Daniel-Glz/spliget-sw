@@ -5,6 +5,7 @@ const nextConfig = {
   reactStrictMode: true,
   basePath: "",
   images: {
+   deviceSizes: [320, 768, 1200],
    formats: ['image/avif', 'image/webp'],
    remotePatterns: [
       {

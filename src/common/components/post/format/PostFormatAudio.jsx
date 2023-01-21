@@ -15,6 +15,14 @@ const PostFormatAudio = ({ postData }) => {
       const alt = substrings[0].trim();
       const width = substrings[1] ? substrings[1].match(/(?<=w:\s?)\d+/g)[0] : 810;
       const height = substrings[1] ? substrings[1].match(/(?<=h:\s?)\d+/g)[0] : 425;
+      let src = props.src;
+
+      if (process.env.NODE_ENV === 'production') {
+        let extension = src.split('.').pop();
+        let srcName = src.split('/').pop().split('.').slice(0, -1).join('.');
+
+        src = `_next/static/chunks/images/images/posts/${srcName}_${850}_${85}.${extension}`;
+      }
 
       return <Image src={props.src} alt={alt} width={width} height={height} quality={85} placeholder="blur" />;
     },

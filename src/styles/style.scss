@@ -93,7 +93,9 @@
 @import 'post/post-list';
 @import 'post/sidebar';
 @import 'post/post-details';
+/*! purgecss start ignore */
 @import 'post/highlight/dracula';
+/*! purgecss end ignore */
 @import 'post/post-format';
 
 

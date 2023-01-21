@@ -36,11 +36,11 @@ const PostMetaTwo = ({metaData}) => {
                         />
                       </div>
                       <div className="content">
-                        <h6 className="post-author-name">
+                        <div className="post-author-name h6">
                           <span className="hover-flip-item">
                             <span data-text={metaData.authorName}>{metaData.authorName}</span>
                           </span>
-                        </h6>
+                        </div>
                         <ul className="post-meta-list">
                           <li>{metaData.date}</li>
                         </ul>

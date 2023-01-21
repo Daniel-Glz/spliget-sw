@@ -11,7 +11,7 @@ import { useEffect } from 'react';
 const PostDetails = ({ post, footerPosts }) => {
 	
 	useEffect(() => {
-		hljs.initHighlightingOnLoad();
+		hljs.highlightAll();
 	}, []);
 
 	const PostFormatHandler = () => {

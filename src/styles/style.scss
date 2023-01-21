@@ -1,6 +1,9 @@
 /**************************************************************
 	STYLESHEET INDEXING
 	|
+	|___ Bootstrap
+	|
+	|
 	|___ Default Styles
 	|	|
 	|	|___ Reset Styles
@@ -24,6 +27,18 @@
 	|___ END STYLESHEET INDEXING
 
 ***************************************************************/
+
+/**************************************
+	Bootstrap
+***************************************/
+
+@import '~bootstrap/dist/css/bootstrap.css';
+/* fix purgecss bug */
+/*! purgecss ignore */
+.row > [class*="col"] {
+	padding-left: 15px;
+	padding-right: 15px;
+}
 
 /**************************************
     Default Styles
@@ -87,7 +102,6 @@
 ***************************************/
 @import 'template/banner';
 @import 'template/darkversion';
-@import 'template/author';
 @import 'template/animation-image-hover';
 @import 'template/error';
 @import 'template/maintanence';

@@ -41,7 +41,7 @@ const PostFormatAudio = ({ postData }) => {
                 ) : null
               }
                 <p>
-                  <Image src={postData.featuredImage} alt={postData.featuredImageAlt} width={810} height={425} quality={85} placeholder="blur" blurDataURL={postData.featuredImage} />
+                  <Image src={postData.featuredImage} alt={postData.featuredImageAlt} width={810} height={425} quality={85} priority placeholder="blur" />
                 </p>
                 <WidgetTOC postData={postData} hideOnDesktop />
                 <ReactMarkdown components={formatMarkdown}>

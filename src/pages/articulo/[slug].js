@@ -1,9 +1,7 @@
 import HeadTitle from '../../common/elements/head/HeadTitle';
 import Header from '../../common/elements/header/Header';
 import Footer from '../../common/elements/footer/Footer';
-import PostFormatVideo from '../../common/components/post/format/PostFormatVideo';
-import PostFormatGallery from '../../common/components/post/format/PostFormatGallery';
-import PostFormatAudio from '../../common/components/post/format/PostFormatAudio';
+import PostFormatStandard from '../../common/components/post/format/PostFormatStandard';
 import { getAllPosts, getPostBySlug } from '../../../lib/api';
 import hljs from 'highlight.js';
 import { useEffect } from 'react';
@@ -15,13 +13,9 @@ const PostDetails = ({ post, footerPosts }) => {
 	}, []);
 
 	const PostFormatHandler = () => {
-		switch (post.format) {
-			case 'video':
-				return <PostFormatVideo postData={post} />
-			case 'gallery':
-				return <PostFormatGallery postData={post} />
-			default:
-				return <PostFormatAudio postData={post} />
+		switch ('standard') {
+			case 'standard':
+				return <PostFormatStandard postData={post} />
 		}
 	}
 

@@ -6,8 +6,8 @@ alternativeHeadline: '¿Como instalar Wordpress?'
 dependencies: 'Conocimientos basicos de desarrollo web'
 proficiencyLevel: 'Principiante'
 keywords: 'Wordpress, CMS, Codigo abierto, Temas, Plugins'
-date: '2023/01/06'
-lastMod: '2023/01/13'
+date: '2023-01-06'
+lastMod: '2023-01-13'
 featuredImage: '/images/posts/wordpress-banner.png'
 featuredImageAlt: 'Logo de Wordpress'
 authorName: 'Daniel Alexis Gonzalez Perez'
@@ -21,6 +21,12 @@ Wordpress es un sistema de gestion de contenidos o por sus siglas en ingles CMS 
 Algo importante a mencionar sobre Wordpress es que es un CMS de código abierto, que significa esto? Que cualquier persona tiene acceso a el de manera gratuita, tanto al sistema en si, como a todo el código fuente del software. Esto ha llevado a que se forme una gran comunidad la cual contribuye a dar mantenimiento, mejorar el sistema y crear complementos para este CMS tan popular.
 
 Si tu buscas ser parte de esta comunidad y aprender a usar Wordpress puedes empezar leyendo este articulo, que aqui te mostramos como conseguirlo.
+
+### Historia de Wordpress
+
+Wordpress fue creado y publicado en 2003 por Matt Mullenweg y Mike Little, quienes crearon un sistema de gestion de contenidos que fuera fácil de usar y que permitiera a cualquier persona crear un sitio web sin necesidad de tener conocimientos de programación. Para esto decidieron usar dos tecnologias muy populares hasta este momento, las cuales son PHP y MySQL, estas tecnologias les permitieron crear un sistema que fuera fácil de usar y que pudiera ser instalado en cualquier servidor web.
+
+Al ser un sistema de código abierto, cualquier persona podia descargarlo y usarlo para crear su propio sitio web, lo cual hizo que Wordpress se popularizara rápidamente y que para 2004 llegaran los complementos (plugins) que permitian a los usuarios agregar funcionalidades extra a su sitio web sin necesidad de tener conocimientos de programación.
 
 ## ¿Como funciona Wordpress?
 
@@ -74,11 +80,11 @@ Hay 2 formas de instalar Wordpress, instalándolo de manera local en tu PC o com
 ### Instalar Wordpress en local
 Para que puedas usar Wordpress de manera local es necesario que tengas instalado XAMPP este programa instala y administra por ti las dependencias básicas que un sitio Wordpress necesita para mantenerse activo como lo es: PHP, Apache y MySQL si deseas descargarlo su sitio oficial es el siguiente: [XAMPP](https://www.apachefriends.org/es/). 
 
-Una vez que tengas descargado e instalado XAMPP inicia los modulos de Apache y MySQL y descarga la ultima version de Wordpress que se encuentra disponible en [Wordpress](https://Wordpress.org). Descomprime el archivo que acabas de descargar y copia todos los archivos en la carpeta "htdocs" que se encuentra en la carpeta de XAMPP en tu computadora. Por ejemplo, si has instalado XAMPP en el disco local C, la carpeta "htdocs" se encontrará en la siguiente ruta: C:\xampp\htdocs una vez que hayas hecho esto abre tu navegador y escribe la siguiente URL en la barra de direcciones: `http://localhost/nombre-de-la-carpeta-de-wordpress` . Si seguiste los pasos de manera correcta wordpress ya estara instalado en tu computadora.
+Una vez que tengas descargado e instalado XAMPP inicia los modulos de Apache y MySQL y descarga la ultima version de Wordpress que se encuentra disponible en [Wordpress](https://Wordpress.org). Descomprime el archivo que acabas de descargar y copia todos los archivos en la carpeta "htdocs" que se encuentra en la carpeta de XAMPP en tu computadora. Por ejemplo, si has instalado XAMPP en el disco local C, la carpeta "htdocs" se encontrará en la siguiente ruta: `C:\xampp\htdocs` una vez que hayas hecho esto abre tu navegador y escribe la siguiente URL en la barra de direcciones:  `http://localhost/nombre-de-la-carpeta-de-wordpress` . Si seguiste los pasos de manera correcta wordpress ya estara instalado en tu computadora.
 
 
 
 ### Instalar Wordpress en hosting
  Hoy en dia la mayoria de empresas que proveen servicios de alojamiento para sitios web por no decir todas, dan la opcion de instalar Wordpress de manera automatica, sin tener que pasar por el proceso de instalar cosas como PHP o apache, asi que no hay de que preocuparse si buscas esta opción. Si aun no compras un hosting pero deseas hacerlo para tener tu sitio puedes hacerlo en el siguiente enlace: [Siteground](https://es.siteground.com/hosting-wordpress.htm).
 
-En conclusion, Wordpress es un CMS (Content managment system) que nos permite crear y mantener sitios web de manera facil y rapida. Fue creado en 2003 y ha evolucionado de manera constante hasta llegar a ser el CMS mas popular de internet. Es un software de codigo abierto lo que significa que cualquier persona puede acceder a el, modificarlo y distrbuirlo libremente sin tener que pagar por el. Es gratuito y es muy facil de instalar y usar. Si deseas aprender mas sobre Wordpress te recomiendo que visites su sitio oficial: [Wordpress](https://Wordpress.org)
+En conclusion, Wordpress es un CMS (Content managment system) que nos permite crear y mantener sitios web de manera facil y rapida. Fue creado en 2003 y ha evolucionado de manera constante hasta llegar a ser el CMS mas popular de internet. Es un software de codigo abierto lo que significa que cualquier persona puede acceder a el, modificarlo y distrbuirlo libremente sin tener que pagar por el. Es gratuito y es muy facil de instalar y usar. Si deseas aprender mas sobre Wordpress te recomiendo que visites su sitio oficial: [Wordpress](https://Wordpress.org).

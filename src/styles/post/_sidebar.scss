@@ -36,7 +36,6 @@ Sidebar Styles
         padding-bottom: 7px;
         margin-bottom: 20px;
         text-align: center;
-        color: #fff !important;
     }
 
     .widget-list {
@@ -59,7 +58,7 @@ Sidebar Styles
         }
 
         a {
-            color: #D9D9D9;
+            color: var(--color-heading);
             &:hover {
                 color: var(--color-primary) !important;
             }
@@ -107,7 +106,7 @@ Sidebar Styles
                         &:hover {
                             .content {
                                 .title {
-                                    color: var(--color-primary); 
+                                    color: var(--color-heading); 
                                 }
                             }
                         }
@@ -155,9 +154,6 @@ Sidebar Styles
     }
 
     &.widget_newsletter {
-        .h4 {
-            color: #fff !important;
-        }
         p {
             br {
                 @media #{$lg-layout} {

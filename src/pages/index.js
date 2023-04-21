@@ -68,7 +68,6 @@ const PostListPage = ({ allPosts }) => {
 
 export default PostListPage;
 
-
 export async function getStaticProps() {
     const allPosts = getAllPosts([
         'postFormat',

@@ -10,7 +10,7 @@ const Document = () => {
         <link rel="icon" type="image/png" sizes="16x16" href={`${process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_BASEPATH ?? '' : ''}/favicon/favicon-16x16.png`} />
         <link rel="manifest" href="/favicon/site.webmanifest" />
       </Head>
-      <body className='active-dark-mode'>
+      <body >
         <Main />
         <NextScript />
       </body>

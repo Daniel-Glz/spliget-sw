@@ -126,7 +126,7 @@
                 }
 
                 .title {
-                    color: var(--color-white);
+                    color: var(--color-heading);
                     padding-right: 10%;
 
                     @media #{$sm-layout} {
@@ -142,7 +142,7 @@
 
                 .post-meta {
                     .post-author-name {
-                        color: var(--color-white);
+                        color: var(--color-heading);
 
                         &:hover {
                             color: var(--color-primary);

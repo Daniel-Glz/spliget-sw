@@ -101,6 +101,9 @@ blockquote {
             }
         }
     }
+    &-img {
+        border: 2px solid var(--color-heading);
+    }
     li {
         margin: 25px 0;
         &::marker {

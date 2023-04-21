@@ -22,11 +22,12 @@ const PostFormatStandard = ({ postData }) => {
         src = `_next/static/chunks/images/images/posts/${srcName}_${850}_${85}.${extension}`;
       }
 
-      return <Image src={props.src} alt={alt} width={width} height={height} quality={85} placeholder="blur" />;
+      return <Image src={props.src} alt={alt} width={width} height={height} quality={85} placeholder="blur" className='axil-post-details-img' />;
     },
     h2: ({ ...props }) => (<h2 id={slugify(props.children[0])}>{props.children}</h2>),
     h3: ({ ...props }) => (<h3 id={slugify(props.children[0])}>{props.children}</h3>),
     h4: ({ ...props }) => (<h4 id={slugify(props.children[0])}>{props.children}</h4>),
+    a:  ({...props}) => (<a href={props.href} target="_blank" rel="noopener noreferrer">{props.children}</a>)
   }
 
   return (
